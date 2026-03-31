@@ -1,0 +1,16 @@
+{
+  "name": "nss-local-web-builder",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Personal in-browser website builder with visual editing, templates, and one-click deploy",
+  "scripts": {
+    "dev": "pnpm --filter @nss/editor dev",
+    "build": "pnpm --filter @nss/editor build",
+    "preview": "pnpm --filter @nss/editor preview",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

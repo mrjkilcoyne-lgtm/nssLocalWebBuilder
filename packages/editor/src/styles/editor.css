@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* GrapesJS theme overrides — dark mode */
+.gjs-one-bg {
+  background-color: #141414 !important;
+}
+
+.gjs-two-color {
+  color: #fafafa !important;
+}
+
+.gjs-three-bg {
+  background-color: #0a0a0a !important;
+}
+
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #3b82f6 !important;
+}
+
+.gjs-cv-canvas {
+  background-color: #1a1a1a !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.gjs-frame-wrapper {
+  background-color: white;
+  margin: 16px auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Panel styling */
+.gjs-pn-panel {
+  background-color: #141414 !important;
+  border-color: #262626 !important;
+}
+
+.gjs-pn-btn {
+  color: #a3a3a3 !important;
+  border-radius: 4px !important;
+}
+
+.gjs-pn-btn:hover {
+  color: #fafafa !important;
+  background-color: #262626 !important;
+}
+
+.gjs-pn-btn.gjs-pn-active {
+  color: #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Block manager */
+.gjs-blocks-c {
+  padding: 8px !important;
+}
+
+.gjs-block {
+  background-color: #1a1a1a !important;
+  border: 1px solid #262626 !important;
+  border-radius: 6px !important;
+  color: #d4d4d4 !important;
+  min-height: 60px !important;
+  transition: all 0.15s ease !important;
+}
+
+.gjs-block:hover {
+  border-color: #3b82f6 !important;
+  background-color: #1e1e1e !important;
+}
+
+.gjs-block__media svg {
+  fill: #a3a3a3 !important;
+}
+
+/* Style manager */
+.gjs-sm-sector-title {
+  background-color: #1a1a1a !important;
+  border-color: #262626 !important;
+  color: #d4d4d4 !important;
+  font-weight: 500 !important;
+}
+
+.gjs-field {
+  background-color: #0a0a0a !important;
+  border-color: #262626 !important;
+  color: #fafafa !important;
+  border-radius: 4px !important;
+}
+
+.gjs-field:focus-within {
+  border-color: #3b82f6 !important;
+}
+
+/* Layer manager */
+.gjs-layer-title {
+  background-color: transparent !important;
+  border-bottom: 1px solid #262626 !important;
+}
+
+.gjs-layer.gjs-selected .gjs-layer-title {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Trait manager */
+.gjs-trt-trait {
+  border-bottom: 1px solid #262626 !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+/* RTE toolbar */
+.gjs-rte-toolbar {
+  background-color: #141414 !important;
+  border: 1px solid #262626 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
