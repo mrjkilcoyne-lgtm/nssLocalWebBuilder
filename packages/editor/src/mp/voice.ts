@@ -2,6 +2,14 @@
 // Voice Pipeline — browser-native STT/TTS with abstracted interfaces
 // ---------------------------------------------------------------------------
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare global {
+  interface Window {
+    SpeechRecognition: any
+    webkitSpeechRecognition: any
+  }
+}
+
 // --- Speech-to-Text ---
 
 export interface STTAdapter {
@@ -13,7 +21,7 @@ export interface STTAdapter {
 }
 
 class WebSpeechSTT implements STTAdapter {
-  private recognition: SpeechRecognition | null = null
+  private recognition: any = null
   onResult: ((text: string) => void) | null = null
   onError: ((error: string) => void) | null = null
   isListening = false
@@ -30,12 +38,12 @@ class WebSpeechSTT implements STTAdapter {
     this.recognition.interimResults = false
     this.recognition.lang = 'en-GB'
 
-    this.recognition.onresult = (event) => {
+    this.recognition.onresult = (event: any) => {
       const transcript = event.results[0]?.[0]?.transcript ?? ''
       this.onResult?.(transcript)
     }
 
-    this.recognition.onerror = (event) => {
+    this.recognition.onerror = (event: any) => {
       this.isListening = false
       this.onError?.(event.error)
     }

@@ -5,6 +5,7 @@ import { useEffect, useCallback, useState } from 'react'
 import { X, Check, AlertCircle, Loader2, Trash2 } from 'lucide-react'
 import { useAiStore, type StoredApiKey } from '../store/aiStore'
 import { getAllProviders, getProvider } from '../providers'
+import { getAllMemories, deleteMemory, type MemoryEntry } from '../mp/memory'
 
 export default function SettingsModal() {
   const {
@@ -13,17 +14,31 @@ export default function SettingsModal() {
     defaultModel,
     monthlyBudgetGBP,
     showSettings,
+    voiceEnabled,
     setApiKey,
     setKeyValidated,
     removeApiKey,
     setDefault,
     setBudget,
     setShowSettings,
+    setVoiceEnabled,
     getMonthSpend,
   } = useAiStore()
 
   const [validating, setValidating] = useState<string | null>(null)
   const [drafts, setDrafts] = useState<Record<string, string>>({})
+  const [memories, setMemories] = useState<MemoryEntry[]>([])
+
+  useEffect(() => {
+    if (showSettings) {
+      getAllMemories().then(setMemories)
+    }
+  }, [showSettings])
+
+  const handleDeleteMemory = async (key: string) => {
+    await deleteMemory(key)
+    setMemories(prev => prev.filter(m => m.key !== key))
+  }
 
   const providers = getAllProviders()
   const monthSpend = getMonthSpend()
@@ -143,6 +158,22 @@ export default function SettingsModal() {
             </div>
           </section>
 
+          {/* Voice */}
+          <section>
+            <h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-mp-muted">
+              Voice
+            </h3>
+            <label className="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={voiceEnabled}
+                onChange={(e) => setVoiceEnabled(e.target.checked)}
+                className="rounded border-mp-border accent-mp-gold"
+              />
+              <span className="text-sm text-mp-text">Enable voice input and output</span>
+            </label>
+          </section>
+
           {/* API Keys */}
           <section>
             <h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-mp-muted">
@@ -248,6 +279,40 @@ export default function SettingsModal() {
                   </option>
                 ))}
               </select>
+            )}
+          </section>
+          {/* MP Remembers */}
+          <section>
+            <h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-mp-muted">
+              MP Remembers
+            </h3>
+            {memories.length === 0 ? (
+              <p className="text-xs text-mp-muted">
+                No memories stored yet. MP will learn your preferences as you work together.
+              </p>
+            ) : (
+              <div className="space-y-2 max-h-48 overflow-y-auto">
+                {memories.map((m) => (
+                  <div key={m.key} className="flex items-start justify-between gap-2 rounded border border-mp-border bg-mp-bg p-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-medium text-mp-text truncate">{m.key}</span>
+                        <span className="shrink-0 rounded bg-mp-gold/10 px-1.5 py-0.5 text-[9px] font-medium text-mp-gold uppercase">
+                          {m.category}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs text-mp-muted truncate">{m.value}</p>
+                    </div>
+                    <button
+                      onClick={() => handleDeleteMemory(m.key)}
+                      className="shrink-0 rounded p-1 text-mp-muted transition-colors hover:text-mp-red"
+                      title="Forget this"
+                    >
+                      <Trash2 size={12} />
+                    </button>
+                  </div>
+                ))}
+              </div>
             )}
           </section>
         </div>
