@@ -41,12 +41,34 @@ export interface CostHistoryRecord {
 }
 
 // ---------------------------------------------------------------------------
+// Memory — Moneypenny's persistent learned preferences
+// ---------------------------------------------------------------------------
+export interface MemoryRecord {
+  id?: number
+  key: string
+  value: string
+  source: string
+  createdAt: number
+  updatedAt: number
+}
+
+// ---------------------------------------------------------------------------
+// App state — singleton flags (e.g. onboarding_complete)
+// ---------------------------------------------------------------------------
+export interface AppStateRecord {
+  id: string          // always "singleton"
+  onboardingComplete: boolean
+}
+
+// ---------------------------------------------------------------------------
 // Database definition
 // ---------------------------------------------------------------------------
 const db = new Dexie('nssLocalWebBuilder') as Dexie & {
   projects: EntityTable<ProjectRecord, 'id'>
   aiConfig: EntityTable<AiConfigRecord, 'id'>
   costHistory: EntityTable<CostHistoryRecord, 'id'>
+  memory: EntityTable<MemoryRecord, 'id'>
+  appState: EntityTable<AppStateRecord, 'id'>
 }
 
 db.version(1).stores({
@@ -57,6 +79,21 @@ db.version(2).stores({
   projects: 'id, name, domain, status, updatedAt',
   aiConfig: 'id',
   costHistory: '++id, timestamp, providerId',
+})
+
+db.version(3).stores({
+  projects: 'id, name, domain, status, updatedAt',
+  aiConfig: 'id',
+  costHistory: '++id, timestamp, providerId',
+  memory: '++id, key',
+})
+
+db.version(4).stores({
+  projects: 'id, name, domain, status, updatedAt',
+  aiConfig: 'id',
+  costHistory: '++id, timestamp, providerId',
+  memory: '++id, key',
+  appState: 'id',
 })
 
 // ---------------------------------------------------------------------------
@@ -110,6 +147,19 @@ export async function addCostHistoryRecord(record: Omit<CostHistoryRecord, 'id'>
 
 export async function loadCostHistory(): Promise<CostHistoryRecord[]> {
   return db.costHistory.toArray()
+}
+
+// ---------------------------------------------------------------------------
+// App state helpers
+// ---------------------------------------------------------------------------
+export async function loadAppState(): Promise<AppStateRecord | undefined> {
+  return db.appState.get('singleton')
+}
+
+export async function saveAppState(
+  state: Omit<AppStateRecord, 'id'>,
+): Promise<void> {
+  await db.appState.put({ id: 'singleton', ...state })
 }
 
 export { db }

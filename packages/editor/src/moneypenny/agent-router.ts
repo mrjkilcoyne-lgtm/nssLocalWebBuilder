@@ -5,6 +5,7 @@ import { useAiStore } from '../store/aiStore'
 import { useChatStore, type AgentType, type ChatMessage } from '../store/chatStore'
 import { getProvider, type Message } from '../providers'
 import { MONEYPENNY_SYSTEM_PROMPT } from './system-prompt'
+import { buildMemoryContext } from './memory'
 
 // ---------------------------------------------------------------------------
 // Intent detection — simple keyword classifier
@@ -48,10 +49,15 @@ export function detectAgentType(message: string): AgentType {
 // ---------------------------------------------------------------------------
 const MAX_HISTORY = 10
 
-function buildMessages(messages: ChatMessage[]): Message[] {
+async function buildMessages(messages: ChatMessage[]): Promise<Message[]> {
   const history = messages.slice(-MAX_HISTORY)
+  const memoryContext = await buildMemoryContext()
+  const systemContent = memoryContext
+    ? MONEYPENNY_SYSTEM_PROMPT + memoryContext
+    : MONEYPENNY_SYSTEM_PROMPT
+
   const payload: Message[] = [
-    { role: 'system', content: MONEYPENNY_SYSTEM_PROMPT },
+    { role: 'system', content: systemContent },
   ]
   for (const m of history) {
     payload.push({ role: m.role, content: m.content })
@@ -115,7 +121,7 @@ export async function routeMessage(userMessage: string): Promise<string> {
 
     const response = await provider.complete(apiKeyEntry.apiKey, {
       model,
-      messages: buildMessages(allMessages),
+      messages: await buildMessages(allMessages),
     })
 
     // Track cost
