@@ -1,0 +1,4 @@
+[    1036ms] [LOG] Initializing Framer Analytics Anonymous @ https://www.framer.com/:4170
+[    7137ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://v0.app/api/auth/login?next=%2F&action=signup&_rsc=l5937:0
+[    7137ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://v0.app/api/auth/login?next=%2F&_rsc=l5937:0
+[   12121ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://v0.app/api/auth/login?_rsc=l5937:0

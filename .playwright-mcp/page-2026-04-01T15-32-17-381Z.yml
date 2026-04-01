@@ -1,0 +1,682 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e6]:
+      - link "Framer Logo" [ref=e10] [cursor=pointer]:
+        - /url: ./
+        - img "Framer Logo" [ref=e11]
+    - main [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - link "State of Sites ’26 Unlock the report now •" [ref=e22] [cursor=pointer]:
+            - /url: https://www.framer.com/state-of-sites-2026/
+            - generic [ref=e23]:
+              - paragraph [ref=e25]: State of Sites ’26
+              - paragraph [ref=e28]: Unlock the report now
+              - paragraph [ref=e30]: •
+          - generic [ref=e31]:
+            - heading "Build better sites, faster" [level=1] [ref=e33]:
+              - text: Build better
+              - text: sites, faster
+            - paragraph [ref=e36]:
+              - text: Framer is the site builder trusted by leading
+              - text: startups and Fortune 500 companies. Build
+              - text: fast and scale more easily with an integrated
+              - text: CMS, analytics, localization, and SEO.
+          - generic [ref=e37]:
+            - link "Start for free" [ref=e40] [cursor=pointer]:
+              - /url: https://framer.com/r/signup
+              - paragraph [ref=e42]: Start for free
+            - link "Start with AI" [ref=e45] [cursor=pointer]:
+              - /url: ./ai/
+              - paragraph [ref=e47]: Start with AI
+        - generic [ref=e48]:
+          - generic [ref=e53]:
+            - generic [ref=e55]:
+              - img "Website made in Framer" [ref=e61]
+              - img "Website made in Framer" [ref=e67]
+              - img "Website made in Framer" [ref=e73]
+            - generic [ref=e74]:
+              - img "Website made in Framer" [ref=e80]
+              - img "Website made in Framer" [ref=e87]
+              - img "Website made in Framer" [ref=e95]
+            - generic [ref=e98]:
+              - img "Elle Fanning website made in Framer" [ref=e105]
+              - img "Website made in Framer" [ref=e113]
+              - img "Website made in Framer" [ref=e120]
+            - generic [ref=e123]:
+              - img "Website made in Framer" [ref=e129]
+              - img "Website made in Framer" [ref=e136]
+              - img "Website made in Framer" [ref=e144]
+              - img "Website made in Framer" [ref=e150]
+            - generic [ref=e152]:
+              - img "Website made in Framer" [ref=e158]
+              - img "Website made in Framer" [ref=e164]
+              - img "Website made in Framer" [ref=e170]
+          - link "Meet our customers" [ref=e178] [cursor=pointer]:
+            - /url: ./stories/
+            - paragraph [ref=e180]: Meet our customers
+      - generic [ref=e198]:
+        - heading "Create, collaborate, and go live" [level=2] [ref=e201]
+        - generic [ref=e202]:
+          - article [ref=e205]:
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - heading "AI" [level=5] [ref=e212]
+                - paragraph [ref=e214]: Generate page layouts and advanced components in seconds with AI, so you can skip the blank canvas and start designing with confidence.
+              - link "Learn more" [ref=e216] [cursor=pointer]:
+                - /url: ./ai/
+                - paragraph [ref=e218]: Learn more
+          - article [ref=e223]:
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - heading "Design" [level=5] [ref=e230]
+                - paragraph [ref=e232]: Craft responsive layouts and bring them to life with smooth effects, interactions, and animations. Build exactly what you imagine, visually.
+              - link "Learn more" [ref=e234] [cursor=pointer]:
+                - /url: ./design/
+                - paragraph [ref=e236]: Learn more
+          - article [ref=e241]:
+            - generic [ref=e245]:
+              - generic [ref=e246]:
+                - heading "CMS" [level=5] [ref=e248]
+                - paragraph [ref=e250]: Manage and update your content effortlessly with a built-in CMS. Keep your site fresh without touching code.
+              - link "Learn more" [ref=e252] [cursor=pointer]:
+                - /url: ./
+                - paragraph [ref=e254]: Learn more
+          - article [ref=e259]:
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - heading "Collaborate" [level=5] [ref=e266]
+                - paragraph [ref=e268]: Whether you’re collaborating on the canvas or editing copy directly on the page, updates are seamless and handoff-free.
+              - link "Learn more" [ref=e270] [cursor=pointer]:
+                - /url: ./
+                - paragraph [ref=e272]: Learn more
+      - generic [ref=e275]:
+        - heading "Scale without switching tools" [level=2] [ref=e278]
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - heading "Analytics & insights" [level=6] [ref=e284]
+                - paragraph [ref=e286]: Track traffic, measure performance, and monitor conversions.
+              - link "Learn more" [ref=e289] [cursor=pointer]:
+                - /url: ./analytics
+                - heading "Learn more" [level=3] [ref=e291]
+            - img "Framer UI" [ref=e298]
+          - generic [ref=e300]:
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - heading "A/B Testing & optimization" [level=6] [ref=e304]
+                - paragraph [ref=e306]: A/B testing, funnels, and built-in growth insights.
+              - link "Learn more" [ref=e309] [cursor=pointer]:
+                - /url: ./analytics
+                - heading "Learn more" [level=3] [ref=e311]
+            - img "Framer UI" [ref=e318]
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - generic [ref=e321]:
+                - heading "SEO & performance" [level=6] [ref=e323]
+                - paragraph [ref=e325]: Optimize every page with built-in SEO settings, metadata, and blazing-fast hosting.
+              - link "Learn more" [ref=e328] [cursor=pointer]:
+                - /url: ./seo/
+                - heading "Learn more" [level=3] [ref=e330]
+            - img "Lighthouse score" [ref=e338]
+      - generic [ref=e339]:
+        - heading "Powering ambitious teams worldwide" [level=2] [ref=e342]
+        - generic "Customer Stories" [ref=e343]:
+          - generic [ref=e345]:
+            - list [ref=e347]
+            - group "Slideshow pagination controls":
+              - generic:
+                - button "Previous" [ref=e348] [cursor=pointer]:
+                  - img "Back Arrow" [ref=e349]
+                - button "Next" [ref=e350] [cursor=pointer]:
+                  - img "Next Arrow" [ref=e351]
+              - generic [ref=e352]:
+                - button "Scroll to page 1" [ref=e353] [cursor=pointer]:
+                  - generic [ref=e354]: Perplexity
+                - button "Scroll to page 2" [ref=e355] [cursor=pointer]:
+                  - generic [ref=e356]: Flora
+                - button "Scroll to page 3" [ref=e357] [cursor=pointer]:
+                  - generic [ref=e358]: Biograph
+                - button "Scroll to page 4" [ref=e359] [cursor=pointer]:
+                  - generic [ref=e360]: Cradle
+                - button "Scroll to page 5" [ref=e361] [cursor=pointer]:
+                  - generic [ref=e362]: Miro
+      - generic [ref=e363]:
+        - generic [ref=e364]:
+          - heading "Get pro help from handpicked experts" [level=2] [ref=e366]
+          - generic [ref=e367]:
+            - link "Get matched" [ref=e370] [cursor=pointer]:
+              - /url: ./match/
+              - paragraph [ref=e372]: Get matched
+            - link "Find an Expert" [ref=e375] [cursor=pointer]:
+              - /url: https://www.framer.com/experts/
+              - paragraph [ref=e377]: Find an Expert
+        - generic [ref=e380]:
+          - list [ref=e382]
+          - group "Slideshow pagination controls":
+            - generic:
+              - button "Previous" [ref=e383] [cursor=pointer]:
+                - img "Back Arrow" [ref=e384]
+              - button "Next" [ref=e385] [cursor=pointer]:
+                - img "Next Arrow" [ref=e386]
+            - generic [ref=e387]:
+              - button "Scroll to page 1" [ref=e388] [cursor=pointer]
+              - button "Scroll to page 2" [ref=e390] [cursor=pointer]
+      - generic [ref=e392]:
+        - generic [ref=e393]:
+          - heading "Launch faster with community resources" [level=2] [ref=e395]
+          - generic [ref=e396]:
+            - link "Templates" [ref=e399] [cursor=pointer]:
+              - /url: https://www.framer.com/marketplace/templates/
+              - paragraph [ref=e401]: Templates
+            - link "Plugins" [ref=e404] [cursor=pointer]:
+              - /url: https://www.framer.com/marketplace/plugins/
+              - paragraph [ref=e406]: Plugins
+            - link "Components" [ref=e409] [cursor=pointer]:
+              - /url: https://www.framer.com/marketplace/components/
+              - paragraph [ref=e411]: Components
+        - generic [ref=e413]:
+          - group [ref=e415]:
+            - listitem [ref=e417]:
+              - generic [ref=e418]:
+                - link "Framer marketplace item View Component Image Slider Component Before and after images" [ref=e421] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/image-slider/
+                  - generic [ref=e422]:
+                    - img "Framer marketplace item" [ref=e428]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e429]:
+                    - paragraph [ref=e431]: Image Slider
+                    - generic [ref=e432]:
+                      - paragraph [ref=e434]: Component
+                      - paragraph [ref=e436]: Before and after images
+                - link "Framer marketplace item Framer marketplace item View Template Milo Template Furniture shop website" [ref=e439] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/templates/milo/
+                  - generic [ref=e440]:
+                    - generic [ref=e441]:
+                      - img "Framer marketplace item" [ref=e444]
+                      - img "Framer marketplace item" [ref=e447]
+                    - button "View Template":
+                      - generic:
+                        - paragraph: View Template
+                  - generic [ref=e448]:
+                    - paragraph [ref=e450]: Milo
+                    - generic [ref=e451]:
+                      - paragraph [ref=e453]: Template
+                      - paragraph [ref=e455]: Furniture shop website
+                - link "Framer marketplace item Framer marketplace item View Plugin Notion Plugin Sync with Notion" [ref=e458] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/plugins/notion/
+                  - generic [ref=e459]:
+                    - generic [ref=e460]:
+                      - img "Framer marketplace item" [ref=e463]
+                      - img "Framer marketplace item" [ref=e466]
+                    - button "View Plugin":
+                      - generic:
+                        - paragraph: View Plugin
+                  - generic [ref=e467]:
+                    - paragraph [ref=e469]: Notion
+                    - generic [ref=e470]:
+                      - paragraph [ref=e472]: Plugin
+                      - paragraph [ref=e474]: Sync with Notion
+                - link "Framer marketplace item View Component Hover Zoom Component Zoom and pan on hover" [ref=e477] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/hover-image-zoom/
+                  - generic [ref=e478]:
+                    - img "Framer marketplace item" [ref=e484]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e485]:
+                    - paragraph [ref=e487]: Hover Zoom
+                    - generic [ref=e488]:
+                      - paragraph [ref=e490]: Component
+                      - paragraph [ref=e492]: Zoom and pan on hover
+                - link "Framer marketplace item Framer marketplace item View Template Archer Template Creative portfolio" [ref=e495] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/templates/archer/
+                  - generic [ref=e496]:
+                    - generic [ref=e497]:
+                      - img "Framer marketplace item" [ref=e500]
+                      - img "Framer marketplace item" [ref=e503]
+                    - button "View Template":
+                      - generic:
+                        - paragraph: View Template
+                  - generic [ref=e504]:
+                    - paragraph [ref=e506]: Archer
+                    - generic [ref=e507]:
+                      - paragraph [ref=e509]: Template
+                      - paragraph [ref=e511]: Creative portfolio
+                - link "Framer marketplace item Framer marketplace item View Plugin Workshop Plugin Turn ideas into components" [ref=e514] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/plugins/workshop/
+                  - generic [ref=e515]:
+                    - generic [ref=e516]:
+                      - img "Framer marketplace item" [ref=e519]
+                      - img "Framer marketplace item" [ref=e522]
+                    - button "View Plugin":
+                      - generic:
+                        - paragraph: View Plugin
+                  - generic [ref=e523]:
+                    - paragraph [ref=e525]: Workshop
+                    - generic [ref=e526]:
+                      - paragraph [ref=e528]: Plugin
+                      - paragraph [ref=e530]: Turn ideas into components
+                - link "Framer marketplace item View Component Digital Rotary Radio Component Fully functional radio" [ref=e533] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/digital-rotary-radio/
+                  - generic [ref=e534]:
+                    - img "Framer marketplace item" [ref=e540]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e541]:
+                    - paragraph [ref=e543]: Digital Rotary Radio
+                    - generic [ref=e544]:
+                      - paragraph [ref=e546]: Component
+                      - paragraph [ref=e548]: Fully functional radio
+          - group [ref=e550]:
+            - listitem [ref=e552]:
+              - generic [ref=e553]:
+                - link "Framer marketplace item Framer marketplace item View Template Apex Films Template Multimedia portfolio" [ref=e556] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/templates/apex-films/
+                  - generic [ref=e557]:
+                    - generic [ref=e558]:
+                      - img "Framer marketplace item" [ref=e561]
+                      - img "Framer marketplace item" [ref=e564]
+                    - button "View Template":
+                      - generic:
+                        - paragraph: View Template
+                  - generic [ref=e565]:
+                    - paragraph [ref=e567]: Apex Films
+                    - generic [ref=e568]:
+                      - paragraph [ref=e570]: Template
+                      - paragraph [ref=e572]: Multimedia portfolio
+                - link "Framer marketplace item View Component Flip Card Component Drag to flip cards" [ref=e575] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/flipcard-component/
+                  - generic [ref=e576]:
+                    - img "Framer marketplace item" [ref=e582]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e583]:
+                    - paragraph [ref=e585]: Flip Card
+                    - generic [ref=e586]:
+                      - paragraph [ref=e588]: Component
+                      - paragraph [ref=e590]: Drag to flip cards
+                - link "Framer marketplace item View Component Animated Gradients Component Image reveal effect" [ref=e593] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/animated-gradient/
+                  - generic [ref=e594]:
+                    - img "Framer marketplace item" [ref=e600]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e601]:
+                    - paragraph [ref=e603]: Animated Gradients
+                    - generic [ref=e604]:
+                      - paragraph [ref=e606]: Component
+                      - paragraph [ref=e608]: Image reveal effect
+                - link "Framer marketplace item Framer marketplace item View Plugin JSON Sync Plugin Import & export CMS with JSON" [ref=e611] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/plugins/json-sync/
+                  - generic [ref=e612]:
+                    - generic [ref=e613]:
+                      - img "Framer marketplace item" [ref=e616]
+                      - img "Framer marketplace item" [ref=e619]
+                    - button "View Plugin":
+                      - generic:
+                        - paragraph: View Plugin
+                  - generic [ref=e620]:
+                    - paragraph [ref=e622]: JSON Sync
+                    - generic [ref=e623]:
+                      - paragraph [ref=e625]: Plugin
+                      - paragraph [ref=e627]: Import & export CMS with JSON
+                - link "Framer marketplace item Framer marketplace item View Template Baseform Template Modern design portfolio" [ref=e630] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/templates/baseform/
+                  - generic [ref=e631]:
+                    - generic [ref=e632]:
+                      - img "Framer marketplace item" [ref=e635]
+                      - img "Framer marketplace item" [ref=e638]
+                    - button "View Template":
+                      - generic:
+                        - paragraph: View Template
+                  - generic [ref=e639]:
+                    - paragraph [ref=e641]: Baseform
+                    - generic [ref=e642]:
+                      - paragraph [ref=e644]: Template
+                      - paragraph [ref=e646]: Modern design portfolio
+                - link "Framer marketplace item Framer marketplace item View Plugin Asset Manager Plugin Manage your site's assets" [ref=e649] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/plugins/asset-manager/
+                  - generic [ref=e650]:
+                    - generic [ref=e651]:
+                      - img "Framer marketplace item" [ref=e654]
+                      - img "Framer marketplace item" [ref=e657]
+                    - button "View Plugin":
+                      - generic:
+                        - paragraph: View Plugin
+                  - generic [ref=e658]:
+                    - paragraph [ref=e660]: Asset Manager
+                    - generic [ref=e661]:
+                      - paragraph [ref=e663]: Plugin
+                      - paragraph [ref=e665]: Manage your site's assets
+                - link "Framer marketplace item View Component Video Player Component Beautiful video player" [ref=e668] [cursor=pointer]:
+                  - /url: https://www.framer.com/marketplace/components/videoplayer/
+                  - generic [ref=e669]:
+                    - img "Framer marketplace item" [ref=e675]
+                    - button "View Component":
+                      - generic:
+                        - paragraph: View Component
+                  - generic [ref=e676]:
+                    - paragraph [ref=e678]: Video Player
+                    - generic [ref=e679]:
+                      - paragraph [ref=e681]: Component
+                      - paragraph [ref=e683]: Beautiful video player
+    - banner [ref=e685]:
+      - generic [ref=e686]:
+        - heading "Design bold. Launch fast." [level=5] [ref=e688]
+        - generic:
+          - paragraph
+      - generic [ref=e689]:
+        - link "Start for free" [ref=e691] [cursor=pointer]:
+          - /url: https://framer.com/r/signup
+          - paragraph [ref=e693]: Start for free
+        - link "Start with AI" [ref=e695] [cursor=pointer]:
+          - /url: ./wireframer/
+          - paragraph [ref=e697]: Start with AI
+    - contentinfo [ref=e706]:
+      - generic [ref=e707]:
+        - generic [ref=e709]:
+          - link "Framer Logo" [ref=e712] [cursor=pointer]:
+            - /url: ./
+            - img "Framer Logo" [ref=e713]
+          - generic [ref=e714]:
+            - link "Twitter / X" [ref=e715] [cursor=pointer]:
+              - /url: https://x.com/framer
+            - link "Threads" [ref=e717] [cursor=pointer]:
+              - /url: https://www.threads.com/@framer
+            - link "TikTok" [ref=e719] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@framer
+            - link "Instagram" [ref=e721] [cursor=pointer]:
+              - /url: https://www.instagram.com/framer/
+            - link "LinkedIn" [ref=e723] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/framer/
+            - link "YouTube" [ref=e725] [cursor=pointer]:
+              - /url: https://www.youtube.com/@Framer
+          - link "Loading status loading" [ref=e730] [cursor=pointer]:
+            - /url: https://www.framerstatus.com/
+            - generic [ref=e734]: Loading status
+            - generic [ref=e736]: loading
+          - generic [ref=e738]:
+            - paragraph [ref=e740]: Downloads
+            - generic [ref=e741]:
+              - link "Mac" [ref=e742] [cursor=pointer]:
+                - /url: https://updates.framer.com/electron/darwin/arm64/Framer.zip?_ga=2.113395847.1447313862.1646043056-273660571.1642151053
+                - paragraph [ref=e745]: Mac
+              - link "Windows" [ref=e746] [cursor=pointer]:
+                - /url: https://updates.framer.com/electron/win32/x64/Framer.exe?_ga=2.113395847.1447313862.1646043056-273660571.1642151053
+                - paragraph [ref=e749]: Windows
+          - link "CCPA" [ref=e750] [cursor=pointer]:
+            - /url: https://app.eu.vanta.com/framer.com/trust/ow67ujg7iav0t6qtd1o6r2
+            - paragraph [ref=e757]: CCPA
+        - generic [ref=e758]:
+          - generic [ref=e759]:
+            - list [ref=e760]:
+              - listitem [ref=e761]:
+                - generic [ref=e763]: Product
+              - listitem [ref=e764]:
+                - link "AI" [ref=e765] [cursor=pointer]:
+                  - /url: ./ai/
+                  - generic [ref=e767]: AI
+              - listitem [ref=e768]:
+                - link "Design" [ref=e769] [cursor=pointer]:
+                  - /url: ./design/
+                  - generic [ref=e771]: Design
+              - listitem [ref=e772]:
+                - link "Publish" [ref=e773] [cursor=pointer]:
+                  - /url: ./publish/
+                  - generic [ref=e775]: Publish
+              - listitem [ref=e776]:
+                - link "Collaborate" [ref=e777] [cursor=pointer]:
+                  - /url: ./collaborate/
+                  - generic [ref=e779]: Collaborate
+              - listitem [ref=e780]:
+                - link "Convert" [ref=e781] [cursor=pointer]:
+                  - /url: ./convert/
+                  - generic [ref=e783]: Convert
+              - listitem [ref=e784]:
+                - link "CMS" [ref=e785] [cursor=pointer]:
+                  - /url: ./cms/
+                  - generic [ref=e787]: CMS
+              - listitem [ref=e788]:
+                - link "SEO" [ref=e789] [cursor=pointer]:
+                  - /url: ./seo/
+                  - generic [ref=e791]: SEO
+              - listitem [ref=e792]:
+                - link "Hosting" [ref=e793] [cursor=pointer]:
+                  - /url: ./hosting/
+                  - generic [ref=e795]: Hosting
+              - listitem [ref=e796]:
+                - link "Performance" [ref=e797] [cursor=pointer]:
+                  - /url: ./performance/
+                  - generic [ref=e799]: Performance
+              - listitem [ref=e800]:
+                - link "Updates New" [ref=e801] [cursor=pointer]:
+                  - /url: ./updates
+                  - generic [ref=e803]: Updates
+                  - paragraph [ref=e808]: New
+            - list [ref=e809]:
+              - listitem [ref=e810]:
+                - generic [ref=e812]: Business
+              - listitem [ref=e813]:
+                - link "Pricing" [ref=e814] [cursor=pointer]:
+                  - /url: ./pricing
+                  - generic [ref=e816]: Pricing
+              - listitem [ref=e817]:
+                - link "Switch" [ref=e818] [cursor=pointer]:
+                  - /url: ./switch/
+                  - generic [ref=e820]: Switch
+              - listitem [ref=e821]:
+                - link "Startups" [ref=e822] [cursor=pointer]:
+                  - /url: ./startups/
+                  - generic [ref=e824]: Startups
+              - listitem [ref=e825]:
+                - link "Agencies" [ref=e826] [cursor=pointer]:
+                  - /url: ./agencies/
+                  - generic [ref=e828]: Agencies
+              - listitem [ref=e829]:
+                - link "Enterprise" [ref=e830] [cursor=pointer]:
+                  - /url: ./enterprise/
+                  - generic [ref=e832]: Enterprise
+          - generic [ref=e833]:
+            - list [ref=e834]:
+              - listitem [ref=e835]:
+                - generic [ref=e837]: Solutions
+              - listitem [ref=e838]:
+                - link "Figma to HTML" [ref=e839] [cursor=pointer]:
+                  - /url: ./solutions/figma-to-html/
+                  - generic [ref=e841]: Figma to HTML
+              - listitem [ref=e842]:
+                - link "Website builder" [ref=e843] [cursor=pointer]:
+                  - /url: ./solutions/website-builder/
+                  - generic [ref=e845]: Website builder
+              - listitem [ref=e846]:
+                - link "Portfolio maker" [ref=e847] [cursor=pointer]:
+                  - /url: ./solutions/portfolio-website/
+                  - generic [ref=e849]: Portfolio maker
+              - listitem [ref=e850]:
+                - link "Landing pages" [ref=e851] [cursor=pointer]:
+                  - /url: ./solutions/landing-pages/
+                  - generic [ref=e853]: Landing pages
+              - listitem [ref=e854]:
+                - link "UI/UX design" [ref=e855] [cursor=pointer]:
+                  - /url: ./solutions/ui-ux-design/
+                  - generic [ref=e857]: UI/UX design
+              - listitem [ref=e858]:
+                - link "No-code" [ref=e859] [cursor=pointer]:
+                  - /url: ./solutions/no-code-website-builder/
+                  - generic [ref=e861]: No-code
+            - list [ref=e862]:
+              - listitem [ref=e863]:
+                - generic [ref=e865]: Compare
+              - listitem [ref=e866]:
+                - link "Claude Code" [ref=e868] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-claude-code
+                  - generic [ref=e870]: Claude Code
+                - link "Squarespace" [ref=e872] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-squarespace
+                  - generic [ref=e874]: Squarespace
+                - link "WordPress" [ref=e876] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-wordpress
+                  - generic [ref=e878]: WordPress
+                - link "Webflow" [ref=e880] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-webflow
+                  - generic [ref=e882]: Webflow
+                - link "Lovable" [ref=e884] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-lovable
+                  - generic [ref=e886]: Lovable
+                - link "Figma" [ref=e888] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-figma
+                  - generic [ref=e890]: Figma
+                - link "Wix" [ref=e892] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-wix
+                  - generic [ref=e894]: Wix
+                - link "Codex" [ref=e896] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-codex
+                  - generic [ref=e898]: Codex
+                - link "Unbounce" [ref=e900] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-unbounce
+                  - generic [ref=e902]: Unbounce
+                - link "Contentful" [ref=e904] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-contentful
+                  - generic [ref=e906]: Contentful
+                - link "Ceros" [ref=e908] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-ceros
+                  - generic [ref=e910]: Ceros
+                - link "Readymag" [ref=e912] [cursor=pointer]:
+                  - /url: ./compare/framer-vs-readymag
+                  - generic [ref=e914]: Readymag
+          - list [ref=e916]:
+            - listitem [ref=e917]:
+              - generic [ref=e919]: Resources
+            - listitem [ref=e920]:
+              - link "Marketplace" [ref=e921] [cursor=pointer]:
+                - /url: https://www.framer.com/marketplace/
+                - generic [ref=e923]: Marketplace
+            - listitem [ref=e924]:
+              - link "Templates" [ref=e925] [cursor=pointer]:
+                - /url: https://www.framer.com/marketplace/templates/
+                - generic [ref=e927]: Templates
+            - listitem [ref=e928]:
+              - link "Components" [ref=e929] [cursor=pointer]:
+                - /url: https://www.framer.com/marketplace/components/
+                - generic [ref=e931]: Components
+            - listitem [ref=e932]:
+              - link "Plugins" [ref=e933] [cursor=pointer]:
+                - /url: https://www.framer.com/marketplace/plugins/
+                - generic [ref=e935]: Plugins
+            - listitem [ref=e936]:
+              - link "Vectors" [ref=e937] [cursor=pointer]:
+                - /url: https://www.framer.com/marketplace/vectors/
+                - generic [ref=e939]: Vectors
+            - listitem [ref=e940]:
+              - link "Free domains New" [ref=e941] [cursor=pointer]:
+                - /url: ./domains/
+                - generic [ref=e943]: Free domains
+                - paragraph [ref=e948]: New
+            - listitem [ref=e949]:
+              - link "Case studies" [ref=e950] [cursor=pointer]:
+                - /url: ./stories/
+                - generic [ref=e952]: Case studies
+            - listitem [ref=e953]:
+              - link "Developers" [ref=e954] [cursor=pointer]:
+                - /url: ./developers/
+                - generic [ref=e956]: Developers
+            - listitem [ref=e957]:
+              - link "Newsletter" [ref=e958] [cursor=pointer]:
+                - /url: ./newsletter
+                - generic [ref=e960]: Newsletter
+            - listitem [ref=e961]:
+              - link "Support" [ref=e962] [cursor=pointer]:
+                - /url: ./help/
+                - generic [ref=e964]: Support
+            - listitem [ref=e965]:
+              - link "Contact" [ref=e966] [cursor=pointer]:
+                - /url: ./contact/
+                - generic [ref=e968]: Contact
+            - listitem [ref=e969]:
+              - link "Guides" [ref=e970] [cursor=pointer]:
+                - /url: ./guides
+                - generic [ref=e972]: Guides
+            - listitem [ref=e973]:
+              - link "Brand" [ref=e974] [cursor=pointer]:
+                - /url: ./brand
+                - generic [ref=e976]: Brand
+            - listitem [ref=e977]:
+              - link "Blog" [ref=e978] [cursor=pointer]:
+                - /url: ./blog/
+                - generic [ref=e980]: Blog
+          - generic [ref=e981]:
+            - list [ref=e982]:
+              - listitem [ref=e983]:
+                - generic [ref=e985]: Company
+              - listitem [ref=e986]:
+                - link "Meetups" [ref=e987] [cursor=pointer]:
+                  - /url: ./meetups/
+                  - generic [ref=e989]: Meetups
+              - listitem [ref=e990]:
+                - link "Careers" [ref=e991] [cursor=pointer]:
+                  - /url: ./careers/
+                  - generic [ref=e993]: Careers
+              - listitem [ref=e994]:
+                - link "Security" [ref=e995] [cursor=pointer]:
+                  - /url: ./legal/security/
+                  - generic [ref=e997]: Security
+              - listitem [ref=e998]:
+                - link "Abuse" [ref=e999] [cursor=pointer]:
+                  - /url: mailto:abuse@framer.com
+                  - generic [ref=e1001]: Abuse
+              - listitem [ref=e1002]:
+                - link "Media" [ref=e1003] [cursor=pointer]:
+                  - /url: ./brand
+                  - generic [ref=e1005]: Media
+              - listitem [ref=e1006]:
+                - link "Legal" [ref=e1007] [cursor=pointer]:
+                  - /url: ./legal/terms-of-service/
+                  - generic [ref=e1009]: Legal
+              - listitem [ref=e1010]:
+                - link "Store" [ref=e1011] [cursor=pointer]:
+                  - /url: ./store
+                  - generic [ref=e1013]: Store
+              - listitem [ref=e1014]:
+                - link "Trust center" [ref=e1015] [cursor=pointer]:
+                  - /url: https://app.eu.vanta.com/framer.com/trust/ow67ujg7iav0t6qtd1o6r2
+                  - generic [ref=e1017]: Trust center
+            - list [ref=e1018]:
+              - listitem [ref=e1019]:
+                - generic [ref=e1021]: Programs
+              - listitem [ref=e1022]:
+                - link "Experts" [ref=e1023] [cursor=pointer]:
+                  - /url: ./expert/apply/
+                  - generic [ref=e1025]: Experts
+              - listitem [ref=e1026]:
+                - link "Creators" [ref=e1027] [cursor=pointer]:
+                  - /url: ./creators
+                  - generic [ref=e1029]: Creators
+              - listitem [ref=e1030]:
+                - link "Students" [ref=e1031] [cursor=pointer]:
+                  - /url: ./education/students/
+                  - generic [ref=e1033]: Students
+              - listitem [ref=e1034]:
+                - link "Ambassadors" [ref=e1035] [cursor=pointer]:
+                  - /url: ./education/ambassadors/
+                  - generic [ref=e1037]: Ambassadors
+      - generic [ref=e1038]:
+        - generic [ref=e1039]:
+          - paragraph [ref=e1041]: Get an AI summary of Framer
+          - generic [ref=e1042]:
+            - link "OpenAI summary of Framer" [ref=e1043] [cursor=pointer]:
+              - /url: https://chat.openai.com/?q=As%20a%20potential%20Framer%20customer%2C%20I%20want%20to%20clearly%20understand%20what%20I%20get%20when%20I%20use%20Framer%20and%20how%20it%20fits%20into%20my%20workflow.%0A%0AExplain%20the%20experience%20step%20by%20step%3A%20what%20I%20can%20create%2C%20what%20I%20control%2C%20what%20Framer%20handles%20for%20me%2C%20and%20how%20things%20evolve%20over%20time.%20Describe%20what%20I%20see%20in%20the%20editor%20and%20dashboard%2C%20how%20publishing%20works%2C%20how%20updates%20are%20managed%2C%20and%20what%20outputs%20I%20end%20up%20with%20(sites%2C%20pages%2C%20components%2C%20analytics%2C%20performance%2C%20etc.).%0A%0AClarify%20the%20key%20features%20and%20systems%20involved%E2%80%94design%20tools%2C%20CMS%2C%20components%2C%20interactions%2C%20hosting%2C%20performance%2C%20collaboration%2C%20and%20any%20metrics%20or%20insights%20Framer%20provides.%20Include%20how%20often%20things%20update%20(e.g.%20content%20changes%2C%20deployments%2C%20analytics%20refresh).%0A%0AExplain%20this%20simply%20and%20concretely%2C%20as%20if%20you%20were%20describing%20the%20real%2C%20day-to-day%20experience%20of%20building%20and%20running%20a%20website%20with%20Framer%20for%20the%20first%20time.
+            - link "Gemini summary of Framer" [ref=e1045] [cursor=pointer]:
+              - /url: https://www.google.com/search?udm=50&q=As%20a%20potential%20Framer%20customer%2C%20I%20want%20to%20clearly%20understand%20what%20I%20get%20when%20I%20use%20Framer%20and%20how%20it%20fits%20into%20my%20workflow.%0A%0AExplain%20the%20experience%20step%20by%20step%2C%20as%20if%20describing%20the%20real%2C%20day-to-day%20use%20of%20the%20product.%20Cover%20what%20I%20can%20create%2C%20what%20I%20control%2C%20what%20Framer%20handles%20automatically%2C%20and%20how%20things%20change%20over%20time.%0A%0ADescribe%20what%20I%20see%20in%20the%20editor%20and%20dashboard%2C%20how%20publishing%20works%2C%20how%20updates%20are%20made%2C%20and%20what%20the%20final%20outputs%20are%2C%20such%20as%20websites%2C%20pages%2C%20components%2C%20performance%2C%20and%20analytics.%0A%0AExplain%20this%20simply%20and%20concretely%2C%20focused%20on%20what%20a%20first-time%20user%20would%20actually%20experience.
+            - link "Perplexity summary of Framer" [ref=e1047] [cursor=pointer]:
+              - /url: https://www.perplexity.ai/search?q=As%20a%20potential%20Framer%20customer%2C%20I%20want%20to%20clearly%20understand%20what%20I%20get%20when%20I%20use%20Framer%20and%20how%20it%20fits%20into%20my%20workflow.%0A%0AExplain%20the%20experience%20step%20by%20step%3A%20what%20I%20can%20create%2C%20what%20I%20control%2C%20what%20Framer%20handles%20for%20me%2C%20and%20how%20things%20evolve%20over%20time.%20Describe%20what%20I%20see%20in%20the%20editor%20and%20dashboard%2C%20how%20publishing%20works%2C%20how%20updates%20are%20managed%2C%20and%20what%20outputs%20I%20end%20up%20with.%0A%0AExplain%20this%20simply%20and%20concretely%2C%20as%20if%20you%20were%20describing%20the%20real%2C%20day-to-day%20experience%20of%20using%20Framer.
+        - paragraph [ref=e1052]: © Framer B.V.
+  - img [ref=e1055]
+  - img [ref=e1066]
+  - img [ref=e1075]
