@@ -48,6 +48,12 @@ export interface MemoryRecord {
   key: string
   value: string
   source: string
+  category: string
+  importance: number
+  decayRate: number
+  tier: string
+  accessCount: number
+  expiresAt: number | null
   createdAt: number
   updatedAt: number
 }
@@ -94,6 +100,17 @@ db.version(4).stores({
   costHistory: '++id, timestamp, providerId',
   memory: '++id, key',
   appState: 'id',
+})
+
+db.version(5).stores({
+  projects: 'id, name, domain, status, updatedAt',
+  aiConfig: 'id',
+  costHistory: '++id, timestamp, providerId',
+  memory: '++id, key, category, tier',
+  appState: 'id',
+  collections: '++id, slug',
+  collectionItems: '++id, collectionId',
+  responseCache: '++id, hash',
 })
 
 // ---------------------------------------------------------------------------
