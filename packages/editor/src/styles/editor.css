@@ -12,29 +12,31 @@ html, body, #root {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Crimson Pro', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #110f0b;
+  color: #f5f0e8;
 }
 
-/* GrapesJS theme overrides — dark mode */
+/* GrapesJS theme overrides — warm dark mode */
 .gjs-one-bg {
-  background-color: #141414 !important;
+  background-color: #1a1610 !important;
 }
 
 .gjs-two-color {
-  color: #fafafa !important;
+  color: #f5f0e8 !important;
 }
 
 .gjs-three-bg {
-  background-color: #0a0a0a !important;
+  background-color: #110f0b !important;
 }
 
 .gjs-four-color,
 .gjs-four-color-h:hover {
-  color: #3b82f6 !important;
+  color: #c9a96e !important;
 }
 
 .gjs-cv-canvas {
-  background-color: #1a1a1a !important;
+  background-color: #1a1610 !important;
   top: 0 !important;
   width: 100% !important;
   height: 100% !important;
@@ -50,23 +52,23 @@ html, body, #root {
 
 /* Panel styling */
 .gjs-pn-panel {
-  background-color: #141414 !important;
-  border-color: #262626 !important;
+  background-color: #1a1610 !important;
+  border-color: #2e2820 !important;
 }
 
 .gjs-pn-btn {
-  color: #a3a3a3 !important;
+  color: #8c7e6a !important;
   border-radius: 4px !important;
 }
 
 .gjs-pn-btn:hover {
-  color: #fafafa !important;
-  background-color: #262626 !important;
+  color: #f5f0e8 !important;
+  background-color: #221e17 !important;
 }
 
 .gjs-pn-btn.gjs-pn-active {
-  color: #3b82f6 !important;
-  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #c9a96e !important;
+  background-color: rgba(201, 169, 110, 0.08) !important;
 }
 
 /* Block manager */
@@ -75,80 +77,80 @@ html, body, #root {
 }
 
 .gjs-block {
-  background-color: #1a1a1a !important;
-  border: 1px solid #262626 !important;
+  background-color: #221e17 !important;
+  border: 1px solid #2e2820 !important;
   border-radius: 6px !important;
-  color: #d4d4d4 !important;
+  color: #e8dfd0 !important;
   min-height: 60px !important;
   transition: all 0.15s ease !important;
 }
 
 .gjs-block:hover {
-  border-color: #3b82f6 !important;
-  background-color: #1e1e1e !important;
+  border-color: #c9a96e !important;
+  background-color: #29241c !important;
 }
 
 .gjs-block__media svg {
-  fill: #a3a3a3 !important;
+  fill: #8c7e6a !important;
 }
 
 /* Style manager */
 .gjs-sm-sector-title {
-  background-color: #1a1a1a !important;
-  border-color: #262626 !important;
-  color: #d4d4d4 !important;
+  background-color: #221e17 !important;
+  border-color: #2e2820 !important;
+  color: #e8dfd0 !important;
   font-weight: 500 !important;
 }
 
 .gjs-field {
-  background-color: #0a0a0a !important;
-  border-color: #262626 !important;
-  color: #fafafa !important;
+  background-color: #110f0b !important;
+  border-color: #2e2820 !important;
+  color: #f5f0e8 !important;
   border-radius: 4px !important;
 }
 
 .gjs-field:focus-within {
-  border-color: #3b82f6 !important;
+  border-color: #c9a96e !important;
 }
 
 /* Layer manager */
 .gjs-layer-title {
   background-color: transparent !important;
-  border-bottom: 1px solid #262626 !important;
+  border-bottom: 1px solid #2e2820 !important;
 }
 
 .gjs-layer.gjs-selected .gjs-layer-title {
-  background-color: rgba(59, 130, 246, 0.1) !important;
+  background-color: rgba(201, 169, 110, 0.06) !important;
 }
 
 /* Trait manager */
 .gjs-trt-trait {
-  border-bottom: 1px solid #262626 !important;
+  border-bottom: 1px solid #2e2820 !important;
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling — warm tones */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #110f0b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #404040;
+  background: #3d352a;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
+  background: #4e4436;
 }
 
 /* RTE toolbar */
 .gjs-rte-toolbar {
-  background-color: #141414 !important;
-  border: 1px solid #262626 !important;
+  background-color: #1a1610 !important;
+  border: 1px solid #2e2820 !important;
   border-radius: 6px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
 }
