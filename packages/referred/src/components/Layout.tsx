@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, Gift } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useKonamiCode } from '@/hooks/useKonamiCode';
 import DealTicker from './DealTicker';
 import RegionToggle from './RegionToggle';
 import Footer from './Footer';
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { easterEgg, showModal, dismiss } = useKonamiCode();
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -106,6 +108,33 @@ export default function Layout() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Easter Egg Modal */}
+      {showModal && easterEgg && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={dismiss}>
+          <div className="mx-4 max-w-md rounded-2xl bg-white p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100">
+                <Gift className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">Secret Unlocked!</h3>
+            </div>
+            <p className="mb-4 text-gray-600">{easterEgg.description}</p>
+            {easterEgg.discount_code && (
+              <div className="mb-4 rounded-lg bg-primary-50 p-3 text-center">
+                <span className="text-sm text-primary-600">Code: </span>
+                <span className="font-mono font-bold text-primary-800">{easterEgg.discount_code}</span>
+              </div>
+            )}
+            <button
+              onClick={dismiss}
+              className="w-full rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-600 transition-colors"
+            >
+              Nice! Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

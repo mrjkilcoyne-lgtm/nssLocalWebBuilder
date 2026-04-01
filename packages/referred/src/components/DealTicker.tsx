@@ -1,19 +1,66 @@
+import { useState, useEffect } from 'react';
 import { Zap } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
-const headlines = [
-  'RunPod drops GPU prices 20% for H100 instances',
-  'Anthropic Claude 4 now available on all plans',
-  'Hugging Face Pro: 50% off annual subscriptions',
-  'NVIDIA RTX 5090 in stock at MSRP — limited time',
-  'Perplexity Pro: $1 trial for new users this week',
-  'Replit Teams: free tier expanded to 10 collaborators',
-  'Midjourney V7 early access included with Pro plan',
-  'AWS credits: $1000 free for AI startups',
-  'Cursor Pro 40% off annual — best IDE deal this quarter',
-  'OpenRouter adds 15 new models with volume discounts',
+const FALLBACK_HEADLINES = [
+  'ElevenLabs: 22% recurring commission on all referrals — best in Voice AI',
+  'DigitalOcean: $200 free credits + 10% recurring commission',
+  'Copy.ai: 45% recurring commission — highest in Content AI',
+  'Wise: Lifetime cookie on referrals — best attribution in market',
+  'JetBrains: 25% commission, 60-day cookie — all IDEs included',
+  'Hetzner: Dedicated servers from EUR3.90/mo — best value in EU hosting',
+  'Raspberry Pi 5: Perfect starter for local AI — under $100',
+  'Neon Serverless Postgres: Free tier doubled — partner program open',
 ];
 
+interface TickerItem {
+  headline: string;
+  link_url: string | null;
+}
+
 export default function DealTicker() {
+  const [items, setItems] = useState<TickerItem[]>(
+    FALLBACK_HEADLINES.map((h) => ({ headline: h, link_url: null }))
+  );
+
+  useEffect(() => {
+    // Fetch initial ticker items
+    supabase
+      .from('deal_ticker')
+      .select('headline, link_url')
+      .eq('is_active', true)
+      .order('priority', { ascending: false })
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setItems(data);
+        }
+      });
+
+    // Subscribe to realtime updates
+    const channel = supabase
+      .channel('deal-ticker-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'deal_ticker' },
+        () => {
+          // Refetch on any change
+          supabase
+            .from('deal_ticker')
+            .select('headline, link_url')
+            .eq('is_active', true)
+            .order('priority', { ascending: false })
+            .then(({ data }) => {
+              if (data && data.length > 0) setItems(data);
+            });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-primary-900 text-white">
       <div className="group flex items-center">
@@ -23,13 +70,19 @@ export default function DealTicker() {
         </div>
         <div className="overflow-hidden">
           <div className="flex animate-ticker-scroll whitespace-nowrap py-1.5 group-hover:[animation-play-state:paused]">
-            {[...headlines, ...headlines].map((headline, i) => (
+            {[...items, ...items].map((item, i) => (
               <span
                 key={i}
                 className="mx-6 inline-flex items-center gap-2 text-xs text-primary-100"
               >
                 <span className="h-1 w-1 rounded-full bg-primary-400" />
-                {headline}
+                {item.link_url ? (
+                  <a href={item.link_url} className="hover:text-white transition-colors">
+                    {item.headline}
+                  </a>
+                ) : (
+                  item.headline
+                )}
               </span>
             ))}
           </div>

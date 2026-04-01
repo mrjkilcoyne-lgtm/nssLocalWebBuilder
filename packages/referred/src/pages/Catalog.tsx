@@ -6,7 +6,7 @@ import { useCatalog } from '@/hooks/useCatalog';
 import SearchBar from '@/components/catalog/SearchBar';
 import FilterSidebar from '@/components/catalog/FilterSidebar';
 import ProductGrid from '@/components/catalog/ProductGrid';
-import type { CatalogFilters, Modality, Region } from '@/types/catalog';
+import type { CatalogFilters, Region } from '@/types/catalog';
 
 const DEFAULT_FILTERS: CatalogFilters = {
   search: '',

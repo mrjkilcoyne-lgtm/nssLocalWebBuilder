@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useRegionStore } from '@/stores/regionStore';
 import RegionToggle from '@/components/RegionToggle';
 import type { CatalogFilters, Modality } from '@/types/catalog';
 
