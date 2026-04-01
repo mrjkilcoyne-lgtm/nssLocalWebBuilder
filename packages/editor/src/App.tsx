@@ -10,7 +10,7 @@ import Editor from './components/Editor'
 import Toolbar from './components/Toolbar'
 import LeftPanel from './components/LeftPanel'
 import RightPanel from './components/RightPanel'
-import Moneypenny from './components/Moneypenny'
+import MP from './components/MP'
 import SettingsModal from './components/SettingsModal'
 import Onboarding from './components/Onboarding'
 
@@ -107,8 +107,8 @@ export default function App() {
         </div>
       )}
 
-      {/* Moneypenny is always present */}
-      <Moneypenny />
+      {/* MP is always present */}
+      <MP />
 
       {/* Settings modal */}
       {showSettings && <SettingsModal />}

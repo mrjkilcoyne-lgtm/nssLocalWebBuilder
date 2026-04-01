@@ -7,6 +7,7 @@ import type {
   Message,
   ModelInfo,
   ModelProvider,
+  StreamingCompletionRequest,
 } from './types';
 import { USD_TO_GBP } from './types';
 
@@ -96,6 +97,86 @@ async function complete(
   };
 }
 
+async function stream(
+  apiKey: string,
+  req: StreamingCompletionRequest,
+): Promise<CompletionResponse> {
+  const systemMsg = req.messages.find((m) => m.role === 'system');
+  const userMessages = req.messages
+    .filter((m): m is Message & { role: 'user' | 'assistant' } => m.role !== 'system')
+    .map((m) => ({ role: m.role, content: m.content }));
+
+  const body: Record<string, unknown> = {
+    model: req.model,
+    max_tokens: req.maxTokens ?? 4096,
+    messages: userMessages,
+    stream: true,
+  };
+  if (systemMsg) {
+    body.system = systemMsg.content;
+  }
+  if (req.temperature !== undefined) {
+    body.temperature = req.temperature;
+  }
+
+  const res = await fetch(ANTHROPIC_API, {
+    method: 'POST',
+    headers: headers(apiKey),
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Anthropic API error ${res.status}: ${err}`);
+  }
+
+  const reader = res.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let content = '';
+  let inputTokens = 0;
+  let outputTokens = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+
+    const lines = buffer.split('\n');
+    buffer = lines.pop() ?? '';
+
+    for (const line of lines) {
+      if (!line.startsWith('data: ')) continue;
+      const json = line.slice(6).trim();
+      if (!json || json === '[DONE]') continue;
+
+      try {
+        const event = JSON.parse(json);
+        if (event.type === 'content_block_delta' && event.delta?.text) {
+          content += event.delta.text;
+          req.onToken(event.delta.text);
+        } else if (event.type === 'message_start' && event.message?.usage) {
+          inputTokens = event.message.usage.input_tokens ?? 0;
+        } else if (event.type === 'message_delta' && event.usage) {
+          outputTokens = event.usage.output_tokens ?? 0;
+        }
+      } catch {
+        // skip malformed JSON
+      }
+    }
+  }
+
+  const response: CompletionResponse = {
+    content,
+    model: req.model,
+    inputTokens,
+    outputTokens,
+    costEstimate: estimateCost(req.model, inputTokens, outputTokens),
+  };
+  req.onComplete?.(response);
+  return response;
+}
+
 async function validateKey(apiKey: string): Promise<boolean> {
   try {
     const res = await fetch(ANTHROPIC_API, {
@@ -120,4 +201,5 @@ export const anthropicProvider: ModelProvider = {
   complete,
   estimateCost,
   validateKey,
+  stream,
 };

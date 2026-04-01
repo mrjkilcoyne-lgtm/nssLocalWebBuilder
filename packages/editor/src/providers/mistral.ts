@@ -6,6 +6,7 @@ import type {
   CompletionResponse,
   ModelInfo,
   ModelProvider,
+  StreamingCompletionRequest,
 } from './types';
 import { USD_TO_GBP } from './types';
 
@@ -89,6 +90,84 @@ async function complete(
   };
 }
 
+async function stream(
+  apiKey: string,
+  req: StreamingCompletionRequest,
+): Promise<CompletionResponse> {
+  const messages = req.messages.map((m) => ({
+    role: m.role,
+    content: m.content,
+  }));
+
+  const body: Record<string, unknown> = {
+    model: req.model,
+    messages,
+    max_tokens: req.maxTokens ?? 4096,
+    stream: true,
+  };
+  if (req.temperature !== undefined) {
+    body.temperature = req.temperature;
+  }
+
+  const res = await fetch(MISTRAL_API, {
+    method: 'POST',
+    headers: headers(apiKey),
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Mistral API error ${res.status}: ${err}`);
+  }
+
+  const reader = res.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let content = '';
+  let inputTokens = 0;
+  let outputTokens = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+
+    const lines = buffer.split('\n');
+    buffer = lines.pop() ?? '';
+
+    for (const line of lines) {
+      if (!line.startsWith('data: ')) continue;
+      const json = line.slice(6).trim();
+      if (!json || json === '[DONE]') continue;
+
+      try {
+        const event = JSON.parse(json);
+        const delta = event.choices?.[0]?.delta?.content;
+        if (delta) {
+          content += delta;
+          req.onToken(delta);
+        }
+        if (event.usage) {
+          inputTokens = event.usage.prompt_tokens ?? 0;
+          outputTokens = event.usage.completion_tokens ?? 0;
+        }
+      } catch {
+        // skip malformed JSON
+      }
+    }
+  }
+
+  const response: CompletionResponse = {
+    content,
+    model: req.model,
+    inputTokens,
+    outputTokens,
+    costEstimate: estimateCost(req.model, inputTokens, outputTokens),
+  };
+  req.onComplete?.(response);
+  return response;
+}
+
 async function validateKey(apiKey: string): Promise<boolean> {
   try {
     const res = await fetch('https://api.mistral.ai/v1/models', {
@@ -107,4 +186,5 @@ export const mistralProvider: ModelProvider = {
   complete,
   estimateCost,
   validateKey,
+  stream,
 };

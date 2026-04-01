@@ -7,6 +7,7 @@ import type {
   Message,
   ModelInfo,
   ModelProvider,
+  StreamingCompletionRequest,
 } from './types';
 import { USD_TO_GBP } from './types';
 
@@ -100,6 +101,92 @@ async function complete(
   };
 }
 
+async function stream(
+  apiKey: string,
+  req: StreamingCompletionRequest,
+): Promise<CompletionResponse> {
+  const url = `${GEMINI_BASE}/${req.model}:streamGenerateContent?alt=sse&key=${apiKey}`;
+
+  const systemMsg = req.messages.find((m) => m.role === 'system');
+  const chatMessages = req.messages
+    .filter((m) => m.role !== 'system')
+    .map((m) => ({
+      role: mapRole(m.role),
+      parts: [{ text: m.content }],
+    }));
+
+  const body: Record<string, unknown> = {
+    contents: chatMessages,
+    generationConfig: {
+      maxOutputTokens: req.maxTokens ?? 4096,
+      ...(req.temperature !== undefined && { temperature: req.temperature }),
+    },
+  };
+  if (systemMsg) {
+    body.systemInstruction = {
+      parts: [{ text: systemMsg.content }],
+    };
+  }
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Gemini API error ${res.status}: ${err}`);
+  }
+
+  const reader = res.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let content = '';
+  let inputTokens = 0;
+  let outputTokens = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+
+    const lines = buffer.split('\n');
+    buffer = lines.pop() ?? '';
+
+    for (const line of lines) {
+      if (!line.startsWith('data: ')) continue;
+      const json = line.slice(6).trim();
+      if (!json || json === '[DONE]') continue;
+
+      try {
+        const event = JSON.parse(json);
+        const text = event.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) {
+          content += text;
+          req.onToken(text);
+        }
+        if (event.usageMetadata) {
+          inputTokens = event.usageMetadata.promptTokenCount ?? inputTokens;
+          outputTokens = event.usageMetadata.candidatesTokenCount ?? outputTokens;
+        }
+      } catch {
+        // skip malformed JSON
+      }
+    }
+  }
+
+  const response: CompletionResponse = {
+    content,
+    model: req.model,
+    inputTokens,
+    outputTokens,
+    costEstimate: estimateCost(req.model, inputTokens, outputTokens),
+  };
+  req.onComplete?.(response);
+  return response;
+}
+
 async function validateKey(apiKey: string): Promise<boolean> {
   try {
     const url = `${GEMINI_BASE}?key=${apiKey}`;
@@ -117,4 +204,5 @@ export const googleProvider: ModelProvider = {
   complete,
   estimateCost,
   validateKey,
+  stream,
 };

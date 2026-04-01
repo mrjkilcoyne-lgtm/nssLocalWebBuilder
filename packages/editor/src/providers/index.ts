@@ -5,6 +5,7 @@ export type {
   Message,
   CompletionRequest,
   CompletionResponse,
+  StreamingCompletionRequest,
   ModelInfo,
   ModelProvider,
 } from './types';

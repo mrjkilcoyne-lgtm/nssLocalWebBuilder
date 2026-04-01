@@ -33,6 +33,11 @@ export interface ModelInfo {
   maxContext: number;
 }
 
+export interface StreamingCompletionRequest extends CompletionRequest {
+  onToken: (token: string) => void;
+  onComplete?: (response: CompletionResponse) => void;
+}
+
 export interface ModelProvider {
   /** Human-readable display name */
   name: string;
@@ -46,6 +51,8 @@ export interface ModelProvider {
   estimateCost(model: string, inputTokens: number, outputTokens: number): number;
   /** Validate that an API key is functional */
   validateKey(apiKey: string): Promise<boolean>;
+  /** Stream a chat-completion request, calling onToken for each text chunk */
+  stream?(apiKey: string, req: StreamingCompletionRequest): Promise<CompletionResponse>;
 }
 
 /** USD → GBP conversion factor */

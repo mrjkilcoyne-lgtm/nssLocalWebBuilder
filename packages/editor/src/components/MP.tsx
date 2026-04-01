@@ -1,11 +1,11 @@
 // ---------------------------------------------------------------------------
-// Moneypenny — the AI concierge chat interface
+// MP — the AI concierge chat interface
 // ---------------------------------------------------------------------------
 import { useState, useRef, useEffect } from 'react'
 import { Settings } from 'lucide-react'
 import { useChatStore, type ChatMessage, type ActiveAgent } from '../store/chatStore'
 import { useAiStore } from '../store/aiStore'
-import { routeMessage } from '../moneypenny/agent-router'
+import { routeMessage } from '../mp/agent-router'
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -96,8 +96,8 @@ function MessageBubble({ msg }: { msg: ChatMessage }) {
 // ---------------------------------------------------------------------------
 // Main component
 // ---------------------------------------------------------------------------
-export default function Moneypenny() {
-  const { messages, isProcessing, isExpanded, activeAgents, addMessage, setProcessing, setExpanded } =
+export default function MP() {
+  const { messages, isProcessing, isExpanded, activeAgents, streamingContent, addMessage, setProcessing, setExpanded } =
     useChatStore()
   const { getMonthSpend, setShowSettings, getConfiguredProvider } = useAiStore()
 
@@ -144,7 +144,7 @@ export default function Moneypenny() {
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-lg border border-mp-border bg-mp-surface px-4 py-2.5 shadow-lg transition-all duration-200 ease-out hover:border-mp-gold/50 hover:shadow-mp-gold/5"
       >
         <span className="font-mp-serif text-sm text-mp-gold">M</span>
-        <span className="text-xs text-mp-muted">Moneypenny</span>
+        <span className="text-xs text-mp-muted">MP</span>
         {activeAgents.length > 0 && (
           <StatusDot status="working" />
         )}
@@ -159,7 +159,7 @@ export default function Moneypenny() {
       {/* Header */}
       <div className="flex items-center justify-between border-b border-mp-border px-4 py-3">
         <div className="flex items-center gap-3">
-          <h2 className="font-mp-serif text-base text-mp-gold">Moneypenny</h2>
+          <h2 className="font-mp-serif text-base text-mp-gold">MP</h2>
           <span className="font-mp-mono text-[10px] text-mp-muted">
             &pound;{monthSpend.toFixed(2)} this month
           </span>
@@ -201,12 +201,12 @@ export default function Moneypenny() {
           <div className="animate-mp-fade-in py-8 text-center">
             {hasProvider ? (
               <p className="font-mp-body text-sm text-mp-text">
-                Hello. I'm Moneypenny. What are we building today?
+                Hello. I'm MP. What are we building today?
               </p>
             ) : (
               <div className="space-y-2">
                 <p className="font-mp-body text-sm text-mp-text">
-                  Hello. I'm Moneypenny.
+                  Hello. I'm MP.
                 </p>
                 <p className="text-xs text-mp-muted">
                   I'll need an AI model to work with. Open{' '}
@@ -228,6 +228,16 @@ export default function Moneypenny() {
         ))}
 
         {isProcessing && <TypingIndicator />}
+
+        {isProcessing && streamingContent && (
+          <div className="animate-mp-fade-in flex justify-start">
+            <div className="max-w-[85%] rounded-lg border-l-2 border-mp-gold/40 bg-transparent px-4 py-2.5">
+              <p className="whitespace-pre-wrap font-mp-body text-sm leading-relaxed text-mp-text">
+                {streamingContent}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Input */}
@@ -238,7 +248,7 @@ export default function Moneypenny() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
-            placeholder={hasProvider ? 'Ask Moneypenny...' : 'Configure an API key first'}
+            placeholder={hasProvider ? 'Ask MP...' : 'Configure an API key first'}
             disabled={!hasProvider}
             className="flex-1 rounded border border-mp-border bg-mp-surface px-3 py-2 text-sm text-mp-text placeholder-neutral-600 transition-colors focus:border-mp-gold focus:outline-none disabled:opacity-40"
           />

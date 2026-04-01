@@ -85,7 +85,7 @@ export default function Onboarding({ onChoice }: OnboardingProps) {
             transform: phase >= 2 ? 'translateY(0)' : 'translateY(8px)',
           }}
         >
-          Moneypenny
+          MP
         </h1>
 
         {/* Gold line — draws itself from centre outward */}
@@ -107,7 +107,7 @@ export default function Onboarding({ onChoice }: OnboardingProps) {
             transform: phase >= 2 ? 'translateY(0)' : 'translateY(8px)',
           }}
         >
-          Your AI website architect
+          The augmenting intelligence platform
         </p>
 
         {/* Greeting */}
