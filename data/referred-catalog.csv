@@ -1,0 +1,203 @@
+company,category,subcategory,product_name,affiliate_url,amazon_url,amazon_asin,commission_rate,cookie_duration_days,open_program,pitch_likelihood_pct,region_us,region_eu,region_cn,region_row,credit_rating,google_review_score,beginner_friendly,modality,price_range_low,price_range_high,currency,notes
+OpenAI,AI Platforms,LLM Provider,ChatGPT Plus,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.2,TRUE,text,20,200,USD,No affiliate program; enterprise partnerships only
+OpenAI,AI Platforms,LLM Provider,OpenAI API,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.2,FALSE,api,0,10000,USD,Usage-based pricing; no affiliate program
+Anthropic,AI Platforms,LLM Provider,Claude Pro,https://www.anthropic.com/referral,,,0,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,text,20,200,USD,Enterprise referral program only; one-time fee; apply via anthropic.com/referral
+Anthropic,AI Platforms,LLM Provider,Claude API,https://www.anthropic.com/referral,,,0,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,api,0,10000,USD,Enterprise referral partner program; undisclosed commission
+Google,AI Platforms,Cloud AI,Google Cloud AI,https://cloud.google.com/affiliate-program,,,5,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AAA,4.1,FALSE,api,0,50000,USD,Via CJ Affiliate; tiered commissions; US and Canada only
+Google,AI Platforms,Cloud AI,Vertex AI,https://cloud.google.com/affiliate-program,,,5,30,TRUE,0,TRUE,FALSE,FALSE,FALSE,AAA,4.1,FALSE,api,0,50000,USD,Part of Google Cloud affiliate via CJ
+Amazon,AI Platforms,Cloud AI,AWS Bedrock,https://affiliate-program.amazon.com/,,,10,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.0,FALSE,api,0,50000,USD,Via Amazon Associates; 24-hour cookie; up to 10% on qualifying
+Microsoft,AI Platforms,Cloud AI,Azure AI,https://www.microsoft.com/en-us/partners,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,AAA,4.0,FALSE,api,0,50000,USD,AI Cloud Partner Program; co-selling model; no traditional affiliate
+Hugging Face,AI Platforms,Model Hub,Hugging Face Hub,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.5,TRUE,platform,0,200,USD,No affiliate program; open-source focused
+Hugging Face,AI Platforms,Model Hub,Hugging Face Inference API,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.5,FALSE,api,0,5000,USD,Provider pass-through pricing; no affiliate
+Replicate,AI Platforms,Inference,Replicate API,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,B,4.3,FALSE,api,0,5000,USD,No affiliate program found
+Together AI,AI Platforms,Inference,Together AI API,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,B,4.2,FALSE,api,0,10000,USD,No affiliate program found
+Groq,AI Platforms,Inference,Groq Cloud,,,,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,B,4.4,FALSE,api,0,5000,USD,No affiliate program; hardware-focused company
+Mistral,AI Platforms,LLM Provider,Mistral AI Platform,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,B,4.3,FALSE,api,0,10000,EUR,No affiliate program found; available via multiple cloud providers
+Cursor,AI Software/Tools,Code Editor,Cursor Pro,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.6,TRUE,desktop,20,40,USD,No affiliate program; community has requested one repeatedly
+Cursor,AI Software/Tools,Code Editor,Cursor Business,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.6,FALSE,desktop,40,80,USD,No affiliate; referral page exists but no commissions
+Replit,AI Software/Tools,Code Editor,Replit Core,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,7,20,USD,No affiliate program found; $10M to $100M revenue in 9 months
+GitHub,AI Software/Tools,Code Assistant,GitHub Copilot,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,AAA,4.3,TRUE,plugin,10,39,USD,No public affiliate; part of Microsoft ecosystem
+Notion,AI Software/Tools,Productivity,Notion Plus,https://www.notion.com/affiliates,,,50,180,FALSE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,web,10,18,USD,50% recurring for 12 months via PartnerStack; currently closed to new affiliates
+Notion,AI Software/Tools,Productivity,Notion AI,https://www.notion.com/affiliates,,,50,180,FALSE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,web,8,10,USD,50% commission; 180-day cookie; currently not accepting new affiliates
+Jasper,AI Software/Tools,Content AI,Jasper AI,,,,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,B,3.8,TRUE,web,49,125,USD,Affiliate program ended Jan 26 2025; was 30% recurring
+Midjourney,AI Software/Tools,Image AI,Midjourney,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,web,10,120,USD,No affiliate program found
+RunwayML,AI Software/Tools,Video AI,RunwayML,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.2,FALSE,web,12,76,USD,No public affiliate program found
+ElevenLabs,AI Software/Tools,Voice AI,ElevenLabs Starter,https://elevenlabs.io/affiliates,,,22,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.5,TRUE,web,5,22,USD,22% recurring for 12 months via PartnerStack; 90-day cookie
+ElevenLabs,AI Software/Tools,Voice AI,ElevenLabs Creator,https://elevenlabs.io/affiliates,,,22,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.5,TRUE,web,22,99,USD,22% recurring 12mo; 11% on Business plan
+ElevenLabs,AI Software/Tools,Voice AI,ElevenLabs Pro,https://elevenlabs.io/affiliates,,,22,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.5,FALSE,web,99,330,USD,22% recurring for 12 months; min payout $5
+Descript,AI Software/Tools,Video Editor,Descript Pro,https://www.descript.com/affiliate,,,15,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.3,TRUE,desktop,24,33,USD,15% recurring for 12 months or $25 per subscriber; 90-day cookie
+Otter.ai,AI Software/Tools,Transcription,Otter.ai Pro,,,,25,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.1,TRUE,web,10,20,USD,Up to 60% commission; tiered rates; 30-day cookie
+AWS,Cloud/Infra,Cloud Provider,AWS Compute,https://affiliate-program.amazon.com/,,,10,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.0,FALSE,web,0,50000,USD,Amazon Associates program; 24-hour cookie; up to 10%
+AWS,Cloud/Infra,Cloud Provider,AWS S3 Storage,https://affiliate-program.amazon.com/,,,10,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.0,FALSE,api,0,10000,USD,Via Amazon Associates
+AWS,Cloud/Infra,Cloud Provider,AWS Lambda,https://affiliate-program.amazon.com/,,,10,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.0,FALSE,api,0,5000,USD,Via Amazon Associates
+Google,Cloud/Infra,Cloud Provider,Google Cloud Platform,https://cloud.google.com/affiliate-program,,,5,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AAA,4.1,FALSE,web,0,50000,USD,Via CJ Affiliate; US/Canada; tiered commissions
+Microsoft,Cloud/Infra,Cloud Provider,Microsoft Azure,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,AAA,4.0,FALSE,web,0,50000,USD,AI Cloud Partner Program; no traditional affiliate
+Cloudflare,Cloud/Infra,CDN/Edge,Cloudflare Pro,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,web,0,200,USD,No affiliate; PowerUP Partner Program for resellers/consultants
+Cloudflare,Cloud/Infra,CDN/Edge,Cloudflare Workers,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,web,0,500,USD,No affiliate; partner channel only
+Vercel,Cloud/Infra,Hosting,Vercel Pro,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,web,0,20,USD,No general affiliate; v0 affiliate exists separately
+Vercel,Cloud/Infra,Hosting,v0 by Vercel,https://partners.dub.co/v0,,,30,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,web,0,20,USD,$5 per lead + 30% for 6 months via Dub
+Netlify,Cloud/Infra,Hosting,Netlify Pro,,,,20,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,0,19,USD,Partner program up to 20% revshare; agencies/creators focus
+DigitalOcean,Cloud/Infra,Cloud Provider,DigitalOcean Droplets,https://www.digitalocean.com/affiliates,,,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,web,4,48,USD,10% recurring for 12 months via Impact; 30-day cookie
+DigitalOcean,Cloud/Infra,Cloud Provider,DigitalOcean Kubernetes,https://www.digitalocean.com/affiliates,,,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,web,12,500,USD,10% recurring for 12 months
+DigitalOcean,Cloud/Infra,Cloud Provider,DigitalOcean App Platform,https://www.digitalocean.com/affiliates,,,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,web,0,100,USD,10% recurring 12 months; min payout $10
+Hetzner,Cloud/Infra,Cloud Provider,Hetzner Cloud,https://console.hetzner.com/refer,,,0,0,TRUE,0,FALSE,TRUE,FALSE,FALSE,A,4.4,TRUE,web,4,50,EUR,EUR10 per referral after referred user spends EUR10; EUR20 credit for new user
+Hetzner,Cloud/Infra,Cloud Provider,Hetzner Dedicated,https://console.hetzner.com/refer,,,0,0,TRUE,0,FALSE,TRUE,FALSE,FALSE,A,4.4,FALSE,web,30,500,EUR,Referral program; EU-focused
+OVHcloud,Cloud/Infra,Cloud Provider,OVHcloud VPS,,,,0,0,FALSE,30,FALSE,TRUE,FALSE,TRUE,A,4.0,FALSE,web,3,50,EUR,No public affiliate program found
+Linode,Cloud/Infra,Cloud Provider,Linode (Akamai) VPS,,,,5,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.2,TRUE,web,5,100,USD,$10-$25 per new paying customer; 90-day cookie; $100 credit for referred users
+NVIDIA,Hardware,Compute,NVIDIA RTX 4090,,https://www.amazon.co.uk/dp/B0BG95WQ2X,B0BG95WQ2X,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,1599,2499,USD,No direct affiliate; Amazon Associates 3-4% electronics
+NVIDIA,Hardware,Compute,NVIDIA RTX 4080 Super,,https://www.amazon.co.uk/dp/B0CS64RJNL,B0CS64RJNL,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,999,1299,USD,No direct affiliate; promote via Amazon
+NVIDIA,Hardware,Compute,NVIDIA RTX 4070 Ti Super,,https://www.amazon.co.uk/dp/B0CS6B5L4Q,B0CS6B5L4Q,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,799,999,USD,No direct affiliate; Amazon Associates
+NVIDIA,Hardware,Compute,NVIDIA RTX 4060 Ti,,https://www.amazon.co.uk/dp/B0C8QR7TN5,B0C8QR7TN5,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,TRUE,hardware,399,499,USD,Entry-level AI training GPU
+NVIDIA,Hardware,Compute,NVIDIA Jetson Orin Nano,,https://www.amazon.co.uk/dp/B0CLHQR4VY,B0CLHQR4VY,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.4,FALSE,hardware,249,499,USD,Edge AI dev kit; no direct affiliate
+AMD,Hardware,Compute,AMD Radeon RX 7900 XTX,,https://www.amazon.co.uk/dp/B0BZK7MN2T,B0BZK7MN2T,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.3,FALSE,hardware,899,1099,USD,No direct affiliate; Amazon Associates
+AMD,Hardware,Compute,AMD Radeon RX 7800 XT,,https://www.amazon.co.uk/dp/B0CFXNTM2Z,B0CFXNTM2Z,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.3,TRUE,hardware,449,549,USD,Good price/performance for ML
+AMD,Hardware,Compute,AMD Ryzen 9 7950X,,https://www.amazon.co.uk/dp/B0BBHHT8LY,B0BBHHT8LY,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.5,FALSE,hardware,499,699,USD,Top-tier CPU for AI workloads
+AMD,Hardware,Compute,AMD Ryzen 7 7800X3D,,https://www.amazon.co.uk/dp/B0BTZB7F88,B0BTZB7F88,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.6,TRUE,hardware,349,449,USD,Best gaming/dev CPU value
+Intel,Hardware,Compute,Intel Core Ultra 9 285K,,https://www.amazon.co.uk/dp/B0DHF3C4Z3,B0DHF3C4Z3,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.0,FALSE,hardware,549,699,USD,Arrow Lake; NPU for AI workloads
+Intel,Hardware,Compute,Intel Core Ultra 7 265K,,https://www.amazon.co.uk/dp/B0DHF2PMYF,B0DHF2PMYF,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.1,TRUE,hardware,349,449,USD,Integrated NPU; good mid-range
+Apple,Hardware,Compute,Apple Mac Mini M4,,https://www.amazon.co.uk/dp/B0DLHNP2MY,B0DLHNP2MY,0,0,FALSE,5,TRUE,TRUE,FALSE,TRUE,AAA,4.7,TRUE,hardware,599,1399,USD,Apple does not run affiliate; Amazon Associates only
+Apple,Hardware,Compute,Apple Mac Mini M4 Pro,,https://www.amazon.co.uk/dp/B0DLHBM17H,B0DLHBM17H,0,0,FALSE,5,TRUE,TRUE,FALSE,TRUE,AAA,4.7,FALSE,hardware,1399,2399,USD,Excellent for local ML inference
+Apple,Hardware,Compute,Apple MacBook Pro M4 Max,,https://www.amazon.co.uk/dp/B0DLHKJQPB,B0DLHKJQPB,0,0,FALSE,5,TRUE,TRUE,FALSE,TRUE,AAA,4.8,FALSE,hardware,2999,4499,USD,Top portable ML workstation
+Google,Hardware,Compute,Google Coral USB Accelerator,,https://www.amazon.co.uk/dp/B07S214S5Y,B07S214S5Y,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.1,TRUE,hardware,60,90,USD,Edge TPU; no direct affiliate; via Amazon
+Raspberry Pi,Hardware,Compute,Raspberry Pi 5 8GB,,https://www.amazon.co.uk/dp/B0CTD1RHKM,B0CTD1RHKM,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,B,4.5,TRUE,hardware,70,95,GBP,No direct affiliate; sold via approved resellers and Amazon
+Raspberry Pi,Hardware,Compute,Raspberry Pi AI Kit,,https://www.amazon.co.uk/dp/B0D5MG8CLS,B0D5MG8CLS,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,hardware,60,80,GBP,Hailo-8L AI accelerator HAT
+Rode,Hardware,Audio,Rode PodMic USB,,https://www.amazon.co.uk/dp/B0BKHMHD24,B0BKHMHD24,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.6,TRUE,hardware,99,129,USD,No direct affiliate; promote via Amazon Associates (3-4% electronics)
+Rode,Hardware,Audio,Rode NT-USB Mini,,https://www.amazon.co.uk/dp/B084P1CXFD,B084P1CXFD,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,79,99,USD,No direct affiliate program
+Rode,Hardware,Audio,Rode Wireless GO II,,https://www.amazon.co.uk/dp/B08XFQ6KFP,B08XFQ6KFP,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.5,FALSE,hardware,249,299,USD,No direct affiliate; Amazon Associates
+Rode,Hardware,Audio,Rode Caster Pro II,,https://www.amazon.co.uk/dp/B09XDDQVDV,B09XDDQVDV,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.6,FALSE,hardware,499,599,USD,No direct affiliate; podcast production console
+Blue,Hardware,Audio,Blue Yeti USB Microphone,,https://www.amazon.co.uk/dp/B002VA464S,B002VA464S,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,89,129,USD,Owned by Logitech; promote via Logitech affiliate or Amazon
+Blue,Hardware,Audio,Blue Yeti Nano,,https://www.amazon.co.uk/dp/B07DTTGZ7M,B07DTTGZ7M,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,69,99,USD,Budget USB mic; Logitech affiliate covers Blue brand
+Blue,Hardware,Audio,Blue Snowball iCE,,https://www.amazon.co.uk/dp/B006DIA77E,B006DIA77E,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,39,59,USD,Entry level USB mic; via Logitech affiliate
+Shure,Hardware,Audio,Shure SM7dB,https://app.impact.com/campaign-promo-signup/Shure.brand,https://www.amazon.co.uk/dp/B0CTPT9GSH,B0CTPT9GSH,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.7,FALSE,hardware,399,499,USD,10% commission via Impact; active direct affiliate
+Shure,Hardware,Audio,Shure MV7+,https://app.impact.com/campaign-promo-signup/Shure.brand,https://www.amazon.co.uk/dp/B0D3VW7XKG,B0D3VW7XKG,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.6,TRUE,hardware,249,299,USD,10% via Impact; hybrid USB/XLR
+Shure,Hardware,Audio,Shure SM58,https://app.impact.com/campaign-promo-signup/Shure.brand,https://www.amazon.co.uk/dp/B000CZ0R42,B000CZ0R42,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.8,TRUE,hardware,89,109,USD,Industry standard dynamic mic; 10% via Impact
+Focusrite,Hardware,Audio,Focusrite Scarlett 2i2 4th Gen,,https://www.amazon.co.uk/dp/B0C5JRWDWQ,B0C5JRWDWQ,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.6,TRUE,hardware,149,179,USD,No direct affiliate; Amazon Associates
+Focusrite,Hardware,Audio,Focusrite Scarlett Solo 4th Gen,,https://www.amazon.co.uk/dp/B0C5JR1GFT,B0C5JR1GFT,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,99,129,USD,No direct affiliate program
+Focusrite,Hardware,Audio,Focusrite Vocaster Two,,https://www.amazon.co.uk/dp/B09YVHYCM4,B09YVHYCM4,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,269,329,USD,Podcast-focused interface; no direct affiliate
+Elgato,Hardware,Audio,Elgato Wave:3,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B088P5H3GL,B088P5H3GL,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,139,169,USD,Elgato affiliate via partnerships; ~1% commission; 30-day cookie
+Elgato,Hardware,Audio,Elgato Wave Neo,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B0CX16VBDP,B0CX16VBDP,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,69,89,USD,Budget USB mic; Elgato partnership program
+Logitech,Hardware,Video,Logitech Brio 4K,https://www.logitech.com/en-us/promo/affiliate-program.html,https://www.amazon.co.uk/dp/B0CWB1RCRS,B0CWB1RCRS,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.3,TRUE,hardware,169,199,USD,Up to 10% via Impact; covers all Logitech brands
+Logitech,Hardware,Video,Logitech C920s HD Pro,https://www.logitech.com/en-us/promo/affiliate-program.html,https://www.amazon.co.uk/dp/B07TZT4Q89,B07TZT4Q89,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,59,79,USD,Best-selling webcam; 10% commission via Impact
+Logitech,Hardware,Video,Logitech MX Brio,https://www.logitech.com/en-us/promo/affiliate-program.html,https://www.amazon.co.uk/dp/B0CVKH5STM,B0CVKH5STM,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.4,FALSE,hardware,179,199,USD,Premium 4K webcam; Logitech affiliate
+Logitech,Hardware,Video,Logitech StreamCam,https://www.logitech.com/en-us/promo/affiliate-program.html,https://www.amazon.co.uk/dp/B07W4DHNBF,B07W4DHNBF,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.2,TRUE,hardware,119,149,USD,USB-C streaming webcam
+Elgato,Hardware,Video,Elgato Facecam Pro,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B0CDQF1LBP,B0CDQF1LBP,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,hardware,249,299,USD,4K60 webcam; Elgato partnership program
+Elgato,Hardware,Video,Elgato Facecam MK.2,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B0CX16PD46,B0CX16PD46,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,149,169,USD,1080p60 webcam; Elgato affiliate
+Insta360,Hardware,Video,Insta360 Link 2C,https://store.insta360.com/affiliate/intro,https://www.amazon.co.uk/dp/B0DBP5YJXB,B0DBP5YJXB,5,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,99,149,USD,5% commission direct; 30-day cookie; 59+ countries
+Insta360,Hardware,Video,Insta360 Link 2,https://store.insta360.com/affiliate/intro,https://www.amazon.co.uk/dp/B0CMNTQB5X,B0CMNTQB5X,5,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,FALSE,hardware,199,299,USD,4K AI webcam with gimbal tracking
+Insta360,Hardware,Video,Insta360 X4,https://store.insta360.com/affiliate/intro,https://www.amazon.co.uk/dp/B0D19PJ5YB,B0D19PJ5YB,5,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,FALSE,hardware,449,549,USD,8K 360 camera; 5% affiliate commission
+Elgato,Hardware,Video,Elgato HD60 X Capture Card,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B09V1KJ3J4,B09V1KJ3J4,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,149,179,USD,4K60 HDR10 capture; Elgato affiliate
+Elgato,Hardware,Video,Elgato 4K X Capture Card,https://www.elgato.com/us/en/s/partnerships,https://www.amazon.co.uk/dp/B0CWD1F4SH,B0CWD1F4SH,1,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,hardware,249,299,USD,4K144 HDR capture card
+AVerMedia,Hardware,Video,AVerMedia Live Gamer Ultra 2.1,,https://www.amazon.co.uk/dp/B0CLBMB28W,B0CLBMB28W,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,hardware,149,199,USD,No direct affiliate; Amazon Associates
+Amazon,Hardware,Home Hubs,Amazon Echo Show 10,,https://www.amazon.co.uk/dp/B084P3KP2Y,B084P3KP2Y,4,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.3,TRUE,hardware,199,249,USD,Amazon Associates 4% smart home; 24-hour cookie
+Amazon,Hardware,Home Hubs,Amazon Echo Show 8,,https://www.amazon.co.uk/dp/B0BLS3Y632,B0BLS3Y632,4,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,99,149,USD,Amazon Associates 4% smart home
+Amazon,Hardware,Home Hubs,Amazon Echo Dot 5th Gen,,https://www.amazon.co.uk/dp/B09B8V1LZ3,B09B8V1LZ3,4,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,39,59,USD,Best-selling smart speaker; Amazon Associates
+Amazon,Hardware,Home Hubs,Amazon Echo Hub,,https://www.amazon.co.uk/dp/B0BJZ4FD7L,B0BJZ4FD7L,4,1,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.2,TRUE,hardware,149,179,USD,Wall-mounted smart home controller
+Google,Hardware,Home Hubs,Google Nest Hub 2nd Gen,,https://www.amazon.co.uk/dp/B098BNTYQP,B098BNTYQP,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.2,TRUE,hardware,79,99,USD,No Google affiliate; Amazon Associates only
+Google,Hardware,Home Hubs,Google Nest Hub Max,,https://www.amazon.co.uk/dp/B07VRFQ519,B07VRFQ519,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.3,TRUE,hardware,199,229,USD,10-inch display; Amazon Associates
+Google,Hardware,Home Hubs,Google Nest Mini,,https://www.amazon.co.uk/dp/B07XNBDKF7,B07XNBDKF7,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.3,TRUE,hardware,29,49,USD,Budget smart speaker; Amazon Associates
+Apple,Hardware,Home Hubs,Apple HomePod 2nd Gen,,https://www.amazon.co.uk/dp/B0BSHR2ZPY,B0BSHR2ZPY,0,0,FALSE,5,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,279,299,USD,Apple ecosystem only; no direct affiliate
+Apple,Hardware,Home Hubs,Apple HomePod Mini,,https://www.amazon.co.uk/dp/B08J1VV64T,B08J1VV64T,0,0,FALSE,5,TRUE,TRUE,FALSE,TRUE,AAA,4.5,TRUE,hardware,89,99,USD,Compact smart speaker; Amazon Associates
+Home Assistant,Hardware,Home Hubs,Home Assistant Green,,https://www.amazon.co.uk/dp/B0CJKX49N5,B0CJKX49N5,0,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,B,4.6,FALSE,hardware,99,129,USD,Open source hub; no affiliate program; strong community
+Home Assistant,Hardware,Home Hubs,Home Assistant Yellow,,,,0,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,B,4.5,FALSE,hardware,119,179,USD,PoE powered hub; sold via CrowdSupply
+Ubiquiti,Hardware,Networking,UniFi Dream Machine Pro,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,hardware,379,429,USD,Creators program; share in sales via affiliate link
+Ubiquiti,Hardware,Networking,UniFi Dream Router,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,179,199,USD,Ubiquiti Creators program
+Ubiquiti,Hardware,Networking,UniFi Cloud Gateway Ultra,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,129,149,USD,Entry-level UniFi gateway
+Ubiquiti,Hardware,Networking,UniFi U6+ Access Point,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,89,99,USD,WiFi 6 AP; Creators affiliate
+Ubiquiti,Hardware,Networking,UniFi Switch Lite 8 PoE,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,109,129,USD,8-port managed PoE switch
+TP-Link,Hardware,Networking,TP-Link Omada EAP670,https://partner.tp-link.com/,https://www.amazon.co.uk/dp/B09H6DLJPL,B09H6DLJPL,10,45,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,129,159,USD,10% commission; 45-day cookie; WiFi 6 AP
+TP-Link,Hardware,Networking,TP-Link Deco XE75,https://partner.tp-link.com/,https://www.amazon.co.uk/dp/B0B6HQVWC9,B0B6HQVWC9,10,45,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,249,329,USD,WiFi 6E mesh; 10% affiliate commission
+TP-Link,Hardware,Networking,TP-Link Archer AXE75,https://partner.tp-link.com/,https://www.amazon.co.uk/dp/B0B4SQGPFY,B0B4SQGPFY,10,45,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,129,179,USD,WiFi 6E router; TP-Link affiliate
+TP-Link,Hardware,Networking,TP-Link TL-SG108E,,https://www.amazon.co.uk/dp/B00K4DS5KU,B00K4DS5KU,10,45,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,29,39,USD,Managed switch; TP-Link affiliate
+Synology,Hardware,Networking,Synology DS224+,,https://www.amazon.co.uk/dp/B0BT7WQ2XK,B0BT7WQ2XK,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,289,349,USD,No direct affiliate; Amazon Associates; popular 2-bay NAS
+Synology,Hardware,Networking,Synology DS923+,,https://www.amazon.co.uk/dp/B0BT6NZ5XB,B0BT6NZ5XB,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.5,FALSE,hardware,499,599,USD,4-bay NAS for prosumers; Amazon Associates
+Synology,Hardware,Networking,Synology RT6600ax,,https://www.amazon.co.uk/dp/B09YK4ZQMF,B09YK4ZQMF,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,hardware,279,349,USD,WiFi 6 router/NAS hybrid; Amazon Associates
+TrueNAS,Hardware,Networking,TrueNAS MINI,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.3,FALSE,hardware,699,2999,USD,iXsystems; no affiliate found; sold direct
+TrueNAS,Hardware,Networking,TrueNAS CORE (Software),,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,hardware,0,0,USD,Free open-source NAS OS
+Sonos,Hardware,Speakers,Sonos Era 300,,https://www.amazon.co.uk/dp/B0BW34LRRR,B0BW34LRRR,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.4,FALSE,hardware,399,449,USD,No direct affiliate; Amazon Associates; spatial audio speaker
+Sonos,Hardware,Speakers,Sonos Era 100,,https://www.amazon.co.uk/dp/B0BW347FK3,B0BW347FK3,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,199,249,USD,Compact smart speaker; Amazon Associates
+Sonos,Hardware,Speakers,Sonos Roam 2,,https://www.amazon.co.uk/dp/B0D4V33NXJ,B0D4V33NXJ,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,149,179,USD,Portable Bluetooth/WiFi; Amazon Associates
+Sonos,Hardware,Speakers,Sonos Arc Ultra,,https://www.amazon.co.uk/dp/B0DK73KK5L,B0DK73KK5L,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.6,FALSE,hardware,899,999,USD,Premium soundbar; Amazon Associates
+JBL,Hardware,Speakers,JBL Flip 7,,https://www.amazon.co.uk/dp/B0DMP5PXPY,B0DMP5PXPY,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,119,149,USD,IP68 portable speaker; Amazon Associates
+JBL,Hardware,Speakers,JBL Charge 6,,https://www.amazon.co.uk/dp/B0DMQ8SC3Z,B0DMQ8SC3Z,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,169,199,USD,Powerbank + speaker; Amazon Associates
+JBL,Hardware,Speakers,JBL Authentics 200,,https://www.amazon.co.uk/dp/B0CF1TZFXR,B0CF1TZFXR,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,249,299,USD,Retro design; dual assistant; Amazon Associates
+JBL,Hardware,Speakers,JBL 104-BT Studio Monitors,,https://www.amazon.co.uk/dp/B09M6B1SJY,B09M6B1SJY,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,119,149,USD,Budget studio monitors; Amazon Associates
+Bose,Hardware,Speakers,Bose SoundLink Max,,https://www.amazon.co.uk/dp/B0D7HLPFM4,B0D7HLPFM4,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.5,TRUE,hardware,349,399,USD,No direct affiliate; Amazon Associates; premium portable
+Bose,Hardware,Speakers,Bose SoundLink Flex 2nd Gen,,https://www.amazon.co.uk/dp/B0DDZQNM2K,B0DDZQNM2K,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,129,149,USD,IP67 outdoor speaker; Amazon Associates
+Bose,Hardware,Speakers,Bose Smart Soundbar 600,,https://www.amazon.co.uk/dp/B0B4PSQHD3,B0B4PSQHD3,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,449,499,USD,Dolby Atmos soundbar; Amazon Associates
+KRK,Hardware,Speakers,KRK Rokit 5 G4,,https://www.amazon.co.uk/dp/B07YZP3PKC,B07YZP3PKC,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,149,179,USD,Studio monitor pair; Amazon Associates
+Yamaha,Hardware,Speakers,Yamaha HS5 Studio Monitor,,https://www.amazon.co.uk/dp/B00CFOX420,B00CFOX420,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.6,TRUE,hardware,169,199,USD,Industry standard nearfield monitor; Amazon Associates
+Starling,Financial Services,Digital Bank,Starling Bank Personal,,,,0,0,FALSE,45,FALSE,TRUE,FALSE,FALSE,A,4.6,TRUE,app,0,0,GBP,No cash referral; free National Trust day pass for referrals; UK only
+Starling,Financial Services,Digital Bank,Starling Business Account,,,,0,0,FALSE,45,FALSE,TRUE,FALSE,FALSE,A,4.5,TRUE,app,0,0,GBP,Free business banking; no affiliate commission
+Monzo,Financial Services,Digital Bank,Monzo Personal,,,,0,0,FALSE,40,FALSE,TRUE,FALSE,FALSE,A,4.5,TRUE,app,0,0,GBP,Referral gives GBP10-50; not a formal affiliate program; FSCS protected
+Monzo,Financial Services,Digital Bank,Monzo Business,,,,0,0,FALSE,40,FALSE,TRUE,FALSE,FALSE,A,4.4,TRUE,app,0,7,GBP,Business accounts from free to GBP7/mo
+Wise,Financial Services,Transfers,Wise Multi-Currency Account,https://wise.com/invite/,,,10,360,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,app,0,0,GBP,GBP10 per personal referral; GBP50 per business; 360-day cookie; via Partnerize
+Wise,Financial Services,Transfers,Wise Business,https://wise.com/invite/,,,50,360,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,FALSE,app,0,0,GBP,GBP50 per business referral; CPA model
+Revolut,Financial Services,Digital Bank,Revolut Personal,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,app,0,13.99,GBP,Variable referral rewards via invitation; not formal affiliate; UK authorised bank (mobilisation)
+Revolut,Financial Services,Digital Bank,Revolut Business,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.2,FALSE,app,0,100,GBP,No open affiliate; enterprise partnerships
+Revolut,Financial Services,Digital Bank,Revolut Ultra,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,app,45,45,GBP,Premium tier; no affiliate
+JetBrains,Dev Tools,IDE,JetBrains IntelliJ IDEA,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.6,FALSE,desktop,0,599,USD,No affiliate; Content Creators Program for free licenses
+JetBrains,Dev Tools,IDE,JetBrains WebStorm,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,desktop,0,149,USD,No affiliate; reseller partner program exists
+JetBrains,Dev Tools,IDE,JetBrains All Products Pack,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.6,FALSE,desktop,249,649,USD,No affiliate program; Content Creators get free access
+JetBrains,Dev Tools,IDE,JetBrains Fleet,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,A,4.2,TRUE,desktop,0,0,USD,Free lightweight IDE; no affiliate
+Docker,Dev Tools,Containers,Docker Desktop,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,desktop,0,24,USD,No active affiliate program; Mariner Partner Program for channel
+Docker,Dev Tools,Containers,Docker Business,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,web,0,24,USD,Per user/month; no affiliate; partner channel only
+Docker,Dev Tools,Containers,Docker Scout,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.2,FALSE,web,0,9,USD,Container security; no affiliate
+Supabase,Dev Tools,Database,Supabase Pro,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.5,TRUE,web,0,25,USD,No affiliate program; partner program exists at supabase.com/partners
+Supabase,Dev Tools,Database,Supabase Team,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.5,FALSE,web,25,599,USD,No affiliate; open source; self-hostable
+PlanetScale,Dev Tools,Database,PlanetScale Scaler,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.3,FALSE,web,0,29,USD,No affiliate found; acquired Neon-like Postgres capabilities
+PlanetScale,Dev Tools,Database,PlanetScale for Postgres,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.3,FALSE,web,5,999,USD,Launched Sep 2025; no affiliate program
+Neon,Dev Tools,Database,Neon Free Tier,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,web,0,0,USD,No affiliate; acquired by Databricks 2025; serverless Postgres
+Neon,Dev Tools,Database,Neon Scale,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.4,FALSE,web,0,69,USD,Per-project pricing; slashed prices post-acquisition
+Turso,Dev Tools,Database,Turso Starter,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,0,0,USD,No affiliate found; libSQL/SQLite edge database
+Turso,Dev Tools,Database,Turso Scaler,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.2,FALSE,web,0,29,USD,No affiliate; great free tier
+GitHub,Dev Tools,Code Platform,GitHub Copilot Pro,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,AAA,4.3,TRUE,web,10,39,USD,No public affiliate; Microsoft ecosystem
+GitHub,Dev Tools,Code Platform,GitHub Enterprise,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,AAA,4.3,FALSE,web,21,21,USD,Per user/month; no affiliate; MSFT partner program
+Vercel,Dev Tools,Hosting,Vercel Pro,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,B,4.4,TRUE,web,0,20,USD,No general affiliate; v0 affiliate only
+Netlify,Dev Tools,Hosting,Netlify Pro,,,,20,0,FALSE,40,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,0,19,USD,Partner program up to 20% revshare; agencies/creators
+Writesonic,AI Software/Tools,Content AI,Writesonic Pro,,,,30,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.0,TRUE,web,16,33,USD,30% recurring commission; 90-day cookie; via PartnerStack
+Grammarly,AI Software/Tools,Writing,Grammarly Premium,,,,0,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,web,12,30,USD,Fixed bounty model per signup; 90-day cookie; CJ Affiliate
+Copy.ai,AI Software/Tools,Content AI,Copy.ai Pro,,,,45,60,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.1,TRUE,web,36,49,USD,45% recurring for 12 months; high commission rate
+Synthesia,AI Software/Tools,Video AI,Synthesia Starter,,,,25,90,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,22,67,USD,25% recurring commission; AI avatar video platform
+Pictory,AI Software/Tools,Video AI,Pictory Standard,,,,30,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,3.9,TRUE,web,19,39,USD,30% recurring commission via PartnerStack
+Frase,AI Software/Tools,SEO AI,Frase Pro,,,,30,60,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.1,FALSE,web,15,115,USD,30% recurring commission; SEO content optimization
+Surfer SEO,AI Software/Tools,SEO AI,Surfer SEO Essential,,,,25,60,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.2,FALSE,web,89,219,USD,25% recurring for 24 months; popular SEO tool
+Murf.ai,AI Software/Tools,Voice AI,Murf AI Creator,,,,20,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,B,4.0,TRUE,web,26,59,USD,20% commission per sale; AI voice generator
+Loom,AI Software/Tools,Video,Loom Business,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,web,0,12.50,USD,Acquired by Atlassian; no public affiliate
+Canva,AI Software/Tools,Design,Canva Pro,,,,25,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,web,0,13,USD,Up to 80% commission on first subscription; 30-day cookie
+Zapier,AI Software/Tools,Automation,Zapier Professional,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,web,0,73.50,USD,No public affiliate; integration platform
+Vultr,Cloud/Infra,Cloud Provider,Vultr Cloud Compute,,,,10,60,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.2,TRUE,web,2.50,100,USD,10% recurring for 12 months; $100 credit for referrals
+Render,Cloud/Infra,Hosting,Render Team,,,,0,0,FALSE,30,TRUE,TRUE,FALSE,TRUE,B,4.2,TRUE,web,0,19,USD,No affiliate found; growing hosting platform
+Railway,Cloud/Infra,Hosting,Railway Pro,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,B,4.3,TRUE,web,0,20,USD,No affiliate found; developer-focused hosting
+Fly.io,Cloud/Infra,Hosting,Fly.io Launch,,,,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,B,4.2,FALSE,web,0,29,USD,No affiliate found; edge deployment platform
+Upstash,Cloud/Infra,Serverless,Upstash Pro,,,,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,B,4.3,TRUE,web,0,10,USD,No affiliate found; serverless Redis/Kafka
+NVIDIA,Hardware,Compute,NVIDIA RTX 5090,,https://www.amazon.co.uk/dp/B0DZ2FL4FZ,B0DZ2FL4FZ,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,1999,2499,USD,Next-gen flagship GPU; Amazon Associates
+NVIDIA,Hardware,Compute,NVIDIA RTX 5080,,https://www.amazon.co.uk/dp/B0DZ4CVJ98,B0DZ4CVJ98,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AAA,4.5,FALSE,hardware,999,1199,USD,High-end GPU; Amazon Associates
+AMD,Hardware,Compute,AMD Ryzen 9 9950X,,https://www.amazon.co.uk/dp/B0D8SQS2Z6,B0D8SQS2Z6,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.4,FALSE,hardware,549,699,USD,Zen 5 flagship CPU; Amazon Associates
+AMD,Hardware,Compute,AMD Ryzen 7 9700X,,https://www.amazon.co.uk/dp/B0D8SH4PYZ,B0D8SH4PYZ,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.5,TRUE,hardware,299,399,USD,Zen 5 mid-range; excellent value
+Rode,Hardware,Audio,Rode NT1 5th Gen,,https://www.amazon.co.uk/dp/B0BWKFKS3Z,B0BWKFKS3Z,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.7,FALSE,hardware,229,269,USD,Studio condenser; no direct affiliate
+Rode,Hardware,Audio,Rode VideoMicro II,,https://www.amazon.co.uk/dp/B0BHN5BPD7,B0BHN5BPD7,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,59,79,USD,Camera-mount mic; Amazon Associates
+Shure,Hardware,Audio,Shure SE215,https://app.impact.com/campaign-promo-signup/Shure.brand,https://www.amazon.co.uk/dp/B004PNZFZ8,B004PNZFZ8,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,89,109,USD,In-ear monitors; 10% via Impact
+Shure,Hardware,Audio,Shure AONIC 50 Gen 2,https://app.impact.com/campaign-promo-signup/Shure.brand,https://www.amazon.co.uk/dp/B0CZC2QZ5Q,B0CZC2QZ5Q,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.3,FALSE,hardware,299,349,USD,Wireless ANC headphones; 10% via Impact
+PreSonus,Hardware,Audio,PreSonus Eris E3.5,,https://www.amazon.co.uk/dp/B077N2GQXC,B077N2GQXC,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,89,109,USD,Budget studio monitors; Amazon Associates
+Audio-Technica,Hardware,Audio,Audio-Technica AT2020USB-X,,https://www.amazon.co.uk/dp/B0CCRD5H5V,B0CCRD5H5V,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.5,TRUE,hardware,99,129,USD,USB condenser mic; Amazon Associates
+Audio-Technica,Hardware,Audio,Audio-Technica ATH-M50x,,https://www.amazon.co.uk/dp/B00HVLUR86,B00HVLUR86,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.7,TRUE,hardware,119,149,USD,Industry standard headphones; Amazon Associates
+Logitech,Hardware,Video,Logitech Rally Bar Mini,https://www.logitech.com/en-us/promo/affiliate-program.html,,,,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.3,FALSE,hardware,2999,3299,USD,Conference room camera; Logitech affiliate
+Logitech,Hardware,Video,Logitech Scribe,https://www.logitech.com/en-us/promo/affiliate-program.html,,,,10,30,TRUE,0,TRUE,TRUE,FALSE,TRUE,AA,4.2,FALSE,hardware,1199,1199,USD,AI whiteboard camera; Logitech affiliate
+GoPro,Hardware,Video,GoPro HERO13 Black,,https://www.amazon.co.uk/dp/B0DDJFCV6Y,B0DDJFCV6Y,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,349,449,USD,Action camera; Amazon Associates; GoPro has own affiliate too
+DJI,Hardware,Video,DJI Pocket 3,,https://www.amazon.co.uk/dp/B0CLV8DMVL,B0CLV8DMVL,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,hardware,449,569,USD,Gimbal camera; Amazon Associates
+TP-Link,Hardware,Networking,TP-Link Tapo C520WS,https://partner.tp-link.com/,https://www.amazon.co.uk/dp/B0CTJ3BHXJ,B0CTJ3BHXJ,10,45,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,39,59,USD,Outdoor security cam; TP-Link affiliate
+Ubiquiti,Hardware,Networking,UniFi Protect G5 Pro,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,hardware,449,499,USD,4K security camera; Ubiquiti Creators
+Ubiquiti,Hardware,Networking,UniFi Network Application,https://creators.ui.com/,,0,0,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,web,0,0,USD,Free network management software
+Synology,Hardware,Networking,Synology BC500,,https://www.amazon.co.uk/dp/B0CGJRVPNJ,B0CGJRVPNJ,0,0,FALSE,25,TRUE,TRUE,FALSE,TRUE,A,4.2,FALSE,hardware,199,249,USD,Bullet surveillance camera; Amazon Associates
+Sonos,Hardware,Speakers,Sonos Move 2,,https://www.amazon.co.uk/dp/B0CHQHBFPJ,B0CHQHBFPJ,0,0,FALSE,20,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,399,449,USD,Premium portable speaker; Amazon Associates
+JBL,Hardware,Speakers,JBL Go 4,,https://www.amazon.co.uk/dp/B0CTFBB8C2,B0CTFBB8C2,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.3,TRUE,hardware,39,49,USD,Ultra-portable speaker; Amazon Associates
+JBL,Hardware,Speakers,JBL Xtreme 4,,https://www.amazon.co.uk/dp/B0CTF5D5GM,B0CTF5D5GM,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.5,FALSE,hardware,329,379,USD,Large portable speaker; Amazon Associates
+Bose,Hardware,Speakers,Bose QuietComfort Ultra Earbuds,,https://www.amazon.co.uk/dp/B0CD2FSRDD,B0CD2FSRDD,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.4,TRUE,hardware,249,299,USD,Premium ANC earbuds; Amazon Associates
+Bose,Hardware,Speakers,Bose Smart Ultra Soundbar,,https://www.amazon.co.uk/dp/B0CD2CPMPH,B0CD2CPMPH,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.5,FALSE,hardware,799,899,USD,Flagship soundbar; Amazon Associates
+Adam Audio,Hardware,Speakers,Adam Audio T5V,,https://www.amazon.co.uk/dp/B07232VSLT,B07232VSLT,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.6,FALSE,hardware,199,249,USD,Studio monitor; ribbon tweeter; Amazon Associates
+IK Multimedia,Hardware,Speakers,iLoud Micro Monitor,,https://www.amazon.co.uk/dp/B01C5RZWCQ,B01C5RZWCQ,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,A,4.4,TRUE,hardware,299,349,USD,Compact reference monitors; Amazon Associates
+Wise,Financial Services,Transfers,Wise International Transfers,https://wise.com/invite/,,,10,360,TRUE,0,TRUE,TRUE,FALSE,TRUE,A,4.5,TRUE,app,0,0,GBP,Core product; GBP10 per personal referral; 360-day cookie
+Monzo,Financial Services,Digital Bank,Monzo Premium,,,,0,0,FALSE,40,FALSE,TRUE,FALSE,FALSE,A,4.4,FALSE,app,15,15,GBP,Premium account; metal card; no affiliate
+Revolut,Financial Services,Digital Bank,Revolut Metal,,,,0,0,FALSE,35,TRUE,TRUE,FALSE,TRUE,A,4.3,FALSE,app,13.99,13.99,GBP,Premium metal card; no affiliate
+Stripe,Financial Services,Payments,Stripe Payments,,,,0,0,FALSE,15,TRUE,TRUE,FALSE,TRUE,AA,4.3,FALSE,api,0,0,USD,2.9% + 30c per transaction; no public affiliate; Partner program exists
+PayPal,Financial Services,Payments,PayPal Business,,,,0,0,FALSE,10,TRUE,TRUE,FALSE,TRUE,AA,4.0,TRUE,web,0,0,USD,No affiliate for core product; large payment processor

@@ -1,0 +1,45 @@
+company,contact_name,contact_email,contact_role,pitch_status,likelihood_pct,notes
+OpenAI,Partnerships Team,partnerships@openai.com,Partnerships,not_started,25,No affiliate program; pitch for content creator partnership or API referral deal
+Anthropic,Referral Team,referral@anthropic.com,Partnerships,not_started,40,Enterprise referral program exists at anthropic.com/referral; apply for closed referral partner
+Microsoft,Partner Network,mpn@microsoft.com,AI Cloud Partner Program,not_started,35,Azure AI Cloud Partner Program; co-selling model for qualified partners
+Cloudflare,Partner Team,partners@cloudflare.com,Channel Partners,not_started,30,PowerUP Partner Program; resell/manage/consult routes
+Cursor,Community Team,community@cursor.com,Community,not_started,30,No affiliate program; community has requested one; high growth potential
+Replit,Partnerships,partners@replit.com,Partnerships,not_started,25,Rapid growth from $10M to $100M; may launch affiliate soon
+GitHub,Partner Program,partners@github.com,Microsoft Partnership,not_started,20,Part of Microsoft ecosystem; no standalone affiliate for Copilot
+Notion,Affiliate Team,affiliates@notion.com,Affiliate Program,not_started,50,Program exists but currently closed to new affiliates; 50% commission when open
+Jasper,Partnerships,partnerships@jasper.ai,Partnerships,not_started,10,Program ended Jan 2025; pivoted to enterprise; low likelihood of restart
+Midjourney,Business,business@midjourney.com,Business Development,not_started,15,No affiliate found; Discord-based product; may not need one
+RunwayML,Partnerships,partnerships@runwayml.com,Partnerships,not_started,20,No public affiliate; growing video AI platform
+Rode,Marketing,marketing@rode.com,Marketing Partnerships,not_started,35,No direct affiliate; major podcasting brand; pitch content creator deal
+Focusrite,Marketing,marketing@focusrite.com,Marketing,not_started,30,No direct affiliate program; popular audio interface brand
+Sonos,Partnerships,partners@sonos.com,Partnerships,not_started,20,No affiliate; premium speaker brand; Amazon Associates alternative
+JBL,Marketing,marketing@jbl.com,Marketing Partnerships,not_started,15,Harman/Samsung subsidiary; no direct affiliate found
+Bose,Partnerships,partnerships@bose.com,Partnerships,not_started,15,No direct affiliate program found; premium audio brand
+Synology,Business,business@synology.com,Business Development,not_started,25,No direct affiliate; popular NAS brand; sold via authorized resellers
+TrueNAS,Sales,sales@ixsystems.com,Sales,not_started,30,iXsystems; no affiliate found; enterprise NAS focus
+Home Assistant,Community,community@home-assistant.io,Community,not_started,40,Open source; strong community; may be open to content creator program
+Starling,Marketing,marketing@starlingbank.com,Marketing,not_started,45,UK digital bank; referral exists but no formal affiliate commission
+Monzo,Partnerships,partnerships@monzo.com,Partnerships,not_started,40,Referral gives GBP10-50 but not formal affiliate; 700K+ business customers
+Revolut,Partnerships,partnerships@revolut.com,Partnerships,not_started,35,Variable referral rewards; no open affiliate; UK authorised bank
+JetBrains,Creator Program,creators@jetbrains.com,Content Creators Program,not_started,35,Content Creators Program offers free licenses; no cash commissions
+Docker,Partner Program,partners@docker.com,Mariner Partner Program,not_started,25,No active affiliate; Mariner channel partner program for resellers
+Supabase,Partners,partners@supabase.com,Partner Program,not_started,30,Partner program at supabase.com/partners; no affiliate commission
+PlanetScale,Sales,sales@planetscale.com,Sales,not_started,20,No affiliate found; enterprise database focus
+Neon,Partnerships,partnerships@neon.tech,Partnerships,not_started,15,Acquired by Databricks 2025; affiliate program unlikely near-term
+Turso,Business,business@turso.tech,Business Development,not_started,20,No affiliate found; edge SQLite database; early stage
+OVHcloud,Partners,partners@ovhcloud.com,Partner Program,not_started,30,EU cloud provider; no public affiliate found
+Netlify,Partners,partners@netlify.com,Agency Partner Program,not_started,40,Partner program exists with up to 20% revshare; agencies and creators
+Google,Workspace Referral,n/a,Affiliate via CJ,not_started,10,Google Cloud affiliate exists via CJ but only US/Canada; Nest/hardware has no direct affiliate
+Apple,n/a,n/a,n/a,not_started,5,No affiliate programs for any product line; Apple ecosystem is closed
+NVIDIA,n/a,n/a,n/a,not_started,10,No direct affiliate; hardware sold through AIBs and retailers
+AMD,n/a,n/a,n/a,not_started,10,No direct affiliate program; hardware via retailers and Amazon
+Intel,n/a,n/a,n/a,not_started,10,No direct affiliate; hardware via retailers
+Raspberry Pi,n/a,n/a,n/a,not_started,10,Sold via approved resellers; no affiliate program
+Hugging Face,n/a,n/a,n/a,not_started,20,Open-source platform; no affiliate; may be open to partnerships
+Replicate,n/a,n/a,n/a,not_started,15,No affiliate found; inference platform
+Together AI,n/a,n/a,n/a,not_started,15,No affiliate found; inference platform
+Groq,n/a,n/a,n/a,not_started,10,Hardware-focused; no affiliate program
+Mistral,n/a,n/a,n/a,not_started,15,French AI lab; no affiliate program; available via cloud providers
+AVerMedia,Marketing,marketing@avermedia.com,Marketing,not_started,20,No direct affiliate found; capture card manufacturer
+KRK,n/a,n/a,n/a,not_started,15,Studio monitor brand; no direct affiliate
+Yamaha,n/a,n/a,n/a,not_started,15,Large conglomerate; no direct affiliate for pro audio found
