@@ -3,8 +3,9 @@ import { useEditorStore } from '../store/editorStore'
 import { useProjectStore } from '../store/projectStore'
 import {
   Monitor, Tablet, Smartphone, Eye, Undo2, Redo2,
-  Save, Download, ArrowLeft, Code,
+  Save, Download, ArrowLeft, Code, Settings,
 } from 'lucide-react'
+import { useAiStore } from '../store/aiStore'
 
 interface ToolbarProps {
   editor: Editor | null
@@ -13,6 +14,7 @@ interface ToolbarProps {
 export default function Toolbar({ editor }: ToolbarProps) {
   const { deviceMode, setDeviceMode, isPreviewMode, setPreviewMode, isSaving, lastSaved } = useEditorStore()
   const { currentProject, setView } = useProjectStore()
+  const setShowSettings = useAiStore((s) => s.setShowSettings)
 
   const handleDevice = (mode: 'desktop' | 'tablet' | 'mobile') => {
     setDeviceMode(mode)
@@ -147,6 +149,9 @@ export default function Toolbar({ editor }: ToolbarProps) {
         </button>
         <button onClick={() => editor && editor.store()} className="p-1.5 rounded hover:bg-surface-hover text-neutral-400 hover:text-white" title="Save">
           <Save size={16} />
+        </button>
+        <button onClick={() => setShowSettings(true)} className="p-1.5 rounded hover:bg-surface-hover text-neutral-400 hover:text-white" title="Settings">
+          <Settings size={16} />
         </button>
         <button
           onClick={handleExport}
