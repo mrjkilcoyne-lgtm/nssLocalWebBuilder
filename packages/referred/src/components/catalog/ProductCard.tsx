@@ -75,18 +75,33 @@ function formatPrice(low: number | null, high: number | null, currency: string):
   return `Up to ${fmt(high!)}`;
 }
 
-function CompanyLogo({ name, logoUrl }: { name: string; logoUrl: string | null }) {
-  if (logoUrl) {
+function CompanyLogo({ name, logoUrl, websiteUrl }: { name: string; logoUrl: string | null; websiteUrl?: string | null }) {
+  // Try Clearbit logo API if no logo_url set (free, no auth)
+  const domain = websiteUrl
+    ? new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`).hostname.replace('www.', '')
+    : null;
+  const clearbitUrl = domain ? `https://logo.clearbit.com/${domain}` : null;
+  const src = logoUrl || clearbitUrl;
+
+  if (src) {
     return (
       <img
-        src={logoUrl}
+        src={src}
         alt={`${name} logo`}
-        className="h-full w-full object-contain p-2"
+        className="h-full w-full object-contain p-4"
+        onError={(e) => {
+          // Fallback to initials if image fails
+          (e.target as HTMLImageElement).style.display = 'none';
+          (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+        }}
       />
     );
   }
 
-  // Colored initials circle
+  return <LogoFallback name={name} />;
+}
+
+function LogoFallback({ name }: { name: string }) {
   const colors = [
     'from-blue-400 to-blue-600',
     'from-purple-400 to-purple-600',
@@ -129,6 +144,7 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         <CompanyLogo
           name={company?.name || product.name}
           logoUrl={company?.logo_url || null}
+          websiteUrl={company?.website_url}
         />
       </div>
 
@@ -142,6 +158,13 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         <h3 className="mt-0.5 font-semibold text-primary-900 group-hover:text-primary-600 transition-colors">
           {product.name}
         </h3>
+
+        {/* Description */}
+        {product.description && (
+          <p className="mt-1 text-xs text-gray-500 line-clamp-2">
+            {product.description}
+          </p>
+        )}
 
         {/* Credit + stars */}
         <div className="mt-2 flex flex-wrap items-center gap-2">
