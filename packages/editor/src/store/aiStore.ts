@@ -14,6 +14,12 @@ export interface TaskRoute {
   model: string
 }
 
+export interface FallbackChain {
+  primary: { providerId: string; model: string }
+  secondary?: { providerId: string; model: string }
+  useFreetier?: boolean
+}
+
 export interface CostRecord {
   timestamp: number
   providerId: string
@@ -32,6 +38,8 @@ interface AiState {
   monthlyBudgetGBP: number
   costHistory: CostRecord[]
   showSettings: boolean
+  fallbackChain: FallbackChain | null
+  voiceEnabled: boolean
 
   // Mutations
   setApiKey: (providerId: string, apiKey: string) => void
@@ -42,6 +50,8 @@ interface AiState {
   setBudget: (gbp: number) => void
   addCostRecord: (record: CostRecord) => void
   setShowSettings: (show: boolean) => void
+  setFallbackChain: (chain: FallbackChain | null) => void
+  setVoiceEnabled: (enabled: boolean) => void
 
   // Computed
   getMonthSpend: () => number
@@ -56,6 +66,8 @@ export const useAiStore = create<AiState>((set, get) => ({
   monthlyBudgetGBP: 10,
   costHistory: [],
   showSettings: false,
+  fallbackChain: null,
+  voiceEnabled: false,
 
   setApiKey: (providerId, apiKey) =>
     set((s) => {
@@ -100,6 +112,8 @@ export const useAiStore = create<AiState>((set, get) => ({
     set((s) => ({ costHistory: [...s.costHistory, record] })),
 
   setShowSettings: (show) => set({ showSettings: show }),
+  setFallbackChain: (chain) => set({ fallbackChain: chain }),
+  setVoiceEnabled: (enabled) => set({ voiceEnabled: enabled }),
 
   getMonthSpend: () => {
     const now = new Date()
