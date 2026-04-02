@@ -1,21 +1,11 @@
-import { Heart, CreditCard } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const quickAmounts = [5, 10] as const;
 
 interface ContextualTipProps {
   className?: string;
 }
 
 export default function ContextualTip({ className }: ContextualTipProps) {
-  function handleTip(amount: number) {
-    window.open(
-      `https://buy.stripe.com/YOUR_LINK?amount=${amount * 100}`,
-      '_blank',
-      'noopener,noreferrer'
-    );
-  }
-
   return (
     <div
       className={cn(
@@ -31,19 +21,9 @@ export default function ContextualTip({ className }: ContextualTipProps) {
           <span className="font-medium text-primary-700">drop us a thank you</span>
         </p>
       </div>
-      <div className="flex items-center gap-2">
-        {quickAmounts.map((amount) => (
-          <button
-            key={amount}
-            onClick={() => handleTip(amount)}
-            aria-label={`Tip $${amount}`}
-            className="flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-600 transition-all hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
-          >
-            <CreditCard className="h-3 w-3" />
-            ${amount}
-          </button>
-        ))}
-      </div>
+      <span className="rounded-lg border border-dashed border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-400">
+        Tip jar coming soon
+      </span>
     </div>
   );
 }

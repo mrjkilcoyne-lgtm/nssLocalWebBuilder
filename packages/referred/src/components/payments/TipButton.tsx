@@ -47,12 +47,11 @@ export default function TipButton() {
     }
   }
 
-  function handleTip(amount: number) {
-    window.open(
-      `https://buy.stripe.com/YOUR_LINK?amount=${amount * 100}`,
-      '_blank',
-      'noopener,noreferrer'
-    );
+  // Stripe Payment Link not yet configured — disable tips for now
+  const stripeConfigured = false;
+
+  function handleTip(_amount: number) {
+    if (!stripeConfigured) return;
   }
 
   if (dismissed) return null;
@@ -83,18 +82,10 @@ export default function TipButton() {
           <p className="mb-3 text-xs text-gray-500">
             Support REFERRED — keeps it free for everyone.
           </p>
-          <div className="grid grid-cols-3 gap-2">
-            {quickAmounts.map((amount) => (
-              <button
-                key={amount}
-                onClick={() => handleTip(amount)}
-                aria-label={`Tip $${amount}`}
-                className="flex items-center justify-center gap-1 rounded-xl border border-gray-200 py-2 text-sm font-semibold text-gray-700 transition-all hover:border-primary-500 hover:bg-primary-50 hover:text-primary-700"
-              >
-                <CreditCard className="h-3 w-3" />
-                ${amount}
-              </button>
-            ))}
+          <div className="rounded-lg border border-dashed border-gray-200 bg-gray-50/50 px-3 py-3 text-center">
+            <p className="text-xs text-gray-400">
+              Stripe tips coming soon
+            </p>
           </div>
         </div>
       )}

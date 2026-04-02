@@ -7,16 +7,12 @@ import {
   Heart,
   Github,
   Banknote,
-  Copy,
-  Check,
   ExternalLink,
-  Zap,
+  Mail,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import StripeTipJar from './StripeTipJar';
 import BitcoinDonate from './BitcoinDonate';
-
-const BTC_ADDRESS = 'bc1qreferred000000000000000000000';
 
 interface PaymentCard {
   id: string;
@@ -26,6 +22,7 @@ interface PaymentCard {
   cta: string;
   color: string;
   iconBg: string;
+  comingSoon?: boolean;
 }
 
 const methods: PaymentCard[] = [
@@ -37,24 +34,7 @@ const methods: PaymentCard[] = [
     cta: 'Tip with Card',
     color: 'border-indigo-100',
     iconBg: 'bg-indigo-50 text-indigo-600',
-  },
-  {
-    id: 'gocardless',
-    icon: Building2,
-    name: 'GoCardless',
-    description: 'UK/EU Direct Debit',
-    cta: 'Set Up Monthly',
-    color: 'border-teal-100',
-    iconBg: 'bg-teal-50 text-teal-600',
-  },
-  {
-    id: 'bitcoin',
-    icon: Bitcoin,
-    name: 'Bitcoin',
-    description: 'BTC & Lightning',
-    cta: '',
-    color: 'border-orange-100',
-    iconBg: 'bg-orange-50 text-orange-600',
+    comingSoon: true,
   },
   {
     id: 'paypal',
@@ -66,15 +46,6 @@ const methods: PaymentCard[] = [
     iconBg: 'bg-blue-50 text-blue-600',
   },
   {
-    id: 'bmac',
-    icon: Heart,
-    name: 'Buy Me a Coffee',
-    description: 'Quick & Easy',
-    cta: 'Buy a Coffee',
-    color: 'border-yellow-100',
-    iconBg: 'bg-yellow-50 text-yellow-600',
-  },
-  {
     id: 'github',
     icon: Github,
     name: 'GitHub Sponsors',
@@ -82,6 +53,36 @@ const methods: PaymentCard[] = [
     cta: 'Sponsor on GitHub',
     color: 'border-gray-200',
     iconBg: 'bg-gray-100 text-gray-700',
+  },
+  {
+    id: 'gocardless',
+    icon: Building2,
+    name: 'GoCardless',
+    description: 'UK/EU Direct Debit',
+    cta: 'Set Up Monthly',
+    color: 'border-teal-100',
+    iconBg: 'bg-teal-50 text-teal-600',
+    comingSoon: true,
+  },
+  {
+    id: 'bitcoin',
+    icon: Bitcoin,
+    name: 'Bitcoin',
+    description: 'BTC & Lightning',
+    cta: '',
+    color: 'border-orange-100',
+    iconBg: 'bg-orange-50 text-orange-600',
+    comingSoon: true,
+  },
+  {
+    id: 'bmac',
+    icon: Heart,
+    name: 'Buy Me a Coffee',
+    description: 'Quick & Easy',
+    cta: 'Buy a Coffee',
+    color: 'border-yellow-100',
+    iconBg: 'bg-yellow-50 text-yellow-600',
+    comingSoon: true,
   },
   {
     id: 'bank',
@@ -95,91 +96,35 @@ const methods: PaymentCard[] = [
 ];
 
 const externalLinks: Record<string, string> = {
-  gocardless: 'https://pay.gocardless.com/YOUR_LINK',
-  paypal: 'https://paypal.me/YOURHANDLE',
-  bmac: 'https://buymeacoffee.com/YOURHANDLE',
-  github: 'https://github.com/sponsors/YOURHANDLE',
+  paypal: 'https://paypal.me/mrjkilcoyne',
+  github: 'https://github.com/sponsors/mrjkilcoyne-lgtm',
 };
 
-function BankDetails() {
-  const [copied, setCopied] = useState(false);
-  const details = 'Sort: 00-00-00 | Acc: 12345678';
-
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(details);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // fallback
-    }
-  }
-
+function BankContactInfo() {
   return (
-    <div className="mt-3 space-y-2">
-      <div className="rounded-lg bg-gray-50 px-3 py-2">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs text-gray-500">Sort Code</p>
-            <p className="text-sm font-mono font-semibold text-primary-900">00-00-00</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-500">Account</p>
-            <p className="text-sm font-mono font-semibold text-primary-900">12345678</p>
-          </div>
-          <button
-            onClick={copy}
-            aria-label={copied ? 'Copied' : 'Copy bank details'}
-            className={cn(
-              'flex h-8 w-8 items-center justify-center rounded-lg border transition-all',
-              copied
-                ? 'border-emerald-300 bg-emerald-50 text-emerald-600'
-                : 'border-gray-200 text-gray-400 hover:bg-gray-100'
-            )}
+    <div className="mt-3">
+      <div className="rounded-lg bg-gray-50 px-3 py-3 text-center">
+        <Mail className="mx-auto h-4 w-4 text-gray-400" />
+        <p className="mt-1.5 text-xs text-gray-500">
+          Contact{' '}
+          <a
+            href="mailto:mrjkilcoyne@gmail.com"
+            className="font-medium text-primary-600 hover:text-primary-700 underline"
           >
-            {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-          </button>
-        </div>
+            mrjkilcoyne@gmail.com
+          </a>
+          {' '}for bank details
+        </p>
       </div>
     </div>
   );
 }
 
-function InlineBitcoin() {
-  const [copied, setCopied] = useState(false);
-
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(BTC_ADDRESS);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // fallback
-    }
-  }
-
+function ComingSoonInline() {
   return (
-    <div className="mt-3 space-y-2">
-      <div className="flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-2">
-        <code className="flex-1 truncate text-xs font-mono text-gray-600">
-          {BTC_ADDRESS}
-        </code>
-        <button
-          onClick={copy}
-          aria-label={copied ? 'Copied' : 'Copy Bitcoin address'}
-          className={cn(
-            'flex h-7 w-7 shrink-0 items-center justify-center rounded-md border transition-all',
-            copied
-              ? 'border-emerald-300 bg-emerald-50 text-emerald-600'
-              : 'border-gray-200 text-gray-400 hover:bg-gray-100'
-          )}
-        >
-          {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-        </button>
-      </div>
-      <div className="flex items-center gap-1.5 text-xs text-amber-600">
-        <Zap className="h-3 w-3" />
-        Lightning also available
+    <div className="mt-3">
+      <div className="rounded-lg border border-dashed border-gray-200 bg-gray-50/50 px-3 py-2 text-center">
+        <p className="text-xs text-gray-400">Coming soon</p>
       </div>
     </div>
   );
@@ -194,6 +139,7 @@ export default function PaymentMethods({ className }: PaymentMethodsProps) {
   const [bitcoinOpen, setBitcoinOpen] = useState(false);
 
   function handleClick(method: PaymentCard) {
+    if (method.comingSoon) return;
     if (method.id === 'stripe') {
       setStripeOpen(!stripeOpen);
       return;
@@ -216,7 +162,8 @@ export default function PaymentMethods({ className }: PaymentMethodsProps) {
             key={method.id}
             className={cn(
               'card overflow-hidden border p-5 transition-all duration-150',
-              method.color
+              method.color,
+              method.comingSoon && 'opacity-60'
             )}
           >
             <div className="flex items-start gap-3">
@@ -229,19 +176,26 @@ export default function PaymentMethods({ className }: PaymentMethodsProps) {
                 <method.icon className="h-5 w-5" />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="font-semibold text-primary-900">{method.name}</h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-semibold text-primary-900">{method.name}</h3>
+                  {method.comingSoon && (
+                    <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-400">
+                      Soon
+                    </span>
+                  )}
+                </div>
                 <p className="mt-0.5 text-xs text-gray-400">{method.description}</p>
               </div>
             </div>
 
-            {/* Inline content for Bitcoin */}
-            {method.id === 'bitcoin' && <InlineBitcoin />}
+            {/* Inline coming-soon for Bitcoin */}
+            {method.id === 'bitcoin' && <ComingSoonInline />}
 
             {/* Inline content for Bank Transfer */}
-            {method.id === 'bank' && <BankDetails />}
+            {method.id === 'bank' && <BankContactInfo />}
 
             {/* CTA Button for methods with external links or modals */}
-            {method.cta && (
+            {method.cta && !method.comingSoon && (
               <button
                 onClick={() => handleClick(method)}
                 aria-label={method.cta}
@@ -250,6 +204,13 @@ export default function PaymentMethods({ className }: PaymentMethodsProps) {
                 {method.cta}
                 <ExternalLink className="h-3 w-3 text-gray-400" />
               </button>
+            )}
+
+            {/* Coming soon CTA placeholder */}
+            {method.cta && method.comingSoon && (
+              <div className="mt-4 flex w-full items-center justify-center rounded-xl border border-dashed border-gray-200 px-3 py-2.5 text-sm text-gray-400">
+                Coming soon
+              </div>
             )}
           </div>
         ))}
