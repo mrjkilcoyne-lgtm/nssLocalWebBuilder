@@ -49,7 +49,7 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
       // Build Supabase query
       let query = supabase
         .from('products')
-        .select('*, company:companies(*), affiliate_links(*)', { count: 'exact' });
+        .select('*, company:companies(*)', { count: 'exact' });
 
       // Region filter: products whose regions array contains the selected region
       if (filters.region) {
