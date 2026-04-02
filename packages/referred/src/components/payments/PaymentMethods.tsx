@@ -81,7 +81,6 @@ const methods: PaymentCard[] = [
     cta: 'Buy a Coffee',
     color: 'border-yellow-100',
     iconBg: 'bg-yellow-50 text-yellow-600',
-    comingSoon: true,
   },
   {
     id: 'bank',
@@ -98,6 +97,7 @@ const externalLinks: Record<string, string> = {
   stripe: 'https://buy.stripe.com/4gMcN58ea8ambK72g6dfG04',
   paypal: 'https://paypal.me/mrjkilcoyne',
   github: 'https://github.com/sponsors/mrjkilcoyne-lgtm',
+  bmac: 'https://buymeacoffee.com/mattkilcoyne',
 };
 
 function BankContactInfo() {
