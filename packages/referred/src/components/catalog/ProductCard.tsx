@@ -76,32 +76,16 @@ function formatPrice(low: number | null, high: number | null, currency: string):
   return `Up to ${fmt(high!)}`;
 }
 
-function CompanyLogo({ name, logoUrl, websiteUrl }: { name: string; logoUrl: string | null; websiteUrl?: string | null }) {
+function CompanyLogo({ name, logoUrl }: { name: string; logoUrl: string | null }) {
   const [imgFailed, setImgFailed] = useState(false);
 
-  // Try Clearbit logo API if no logo_url set (free, no auth)
-  let clearbitUrl: string | null = null;
-  try {
-    if (websiteUrl) {
-      const domain = new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`).hostname.replace('www.', '');
-      clearbitUrl = `https://logo.clearbit.com/${domain}`;
-    }
-  } catch {
-    // invalid URL, skip
-  }
-  const src = logoUrl || clearbitUrl;
-
-  if (src && !imgFailed) {
+  if (logoUrl && !imgFailed) {
     return (
       <img
-        src={src}
+        src={logoUrl}
         alt={`${name} logo`}
         className="h-full w-full object-contain p-4"
         onError={() => setImgFailed(true)}
-        onLoad={(e) => {
-          const img = e.target as HTMLImageElement;
-          if (img.naturalWidth === 0) setImgFailed(true);
-        }}
       />
     );
   }
@@ -163,7 +147,6 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         <CompanyLogo
           name={company?.name || product.name}
           logoUrl={company?.logo_url || null}
-          websiteUrl={company?.website_url}
         />
       </div>
 
