@@ -74,11 +74,14 @@ export default function TipButton() {
           <p className="mb-3 text-xs text-gray-500">
             Support REFERRED — keeps it free for everyone.
           </p>
-          <div className="rounded-lg border border-dashed border-gray-200 bg-gray-50/50 px-3 py-3 text-center">
-            <p className="text-xs text-gray-400">
-              Stripe tips coming soon
-            </p>
-          </div>
+          <a
+            href="https://buy.stripe.com/4gMcN58ea8ambK72g6dfG04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-lg bg-primary-500 px-3 py-2.5 text-center text-xs font-semibold text-white transition-colors hover:bg-primary-600"
+          >
+            Tip with Card
+          </a>
         </div>
       )}
 

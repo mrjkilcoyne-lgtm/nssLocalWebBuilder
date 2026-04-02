@@ -1,6 +1,8 @@
 import { Heart, CreditCard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+const STRIPE_LINK = 'https://buy.stripe.com/4gMcN58ea8ambK72g6dfG04';
+
 interface StripeTipJarProps {
   className?: string;
 }
@@ -28,15 +30,18 @@ export default function StripeTipJar({ className }: StripeTipJarProps) {
       </div>
 
       <div className="p-6">
-        <div className="rounded-xl border border-dashed border-gray-200 bg-gray-50/50 px-4 py-6 text-center">
-          <CreditCard className="mx-auto h-6 w-6 text-gray-300" />
-          <p className="mt-2 text-sm font-medium text-gray-500">
-            Stripe tips coming soon
-          </p>
-          <p className="mt-1 text-xs text-gray-400">
-            We're setting up our payment link — check back shortly
-          </p>
-        </div>
+        <a
+          href={STRIPE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-primary-500/20 transition-all hover:bg-primary-600 hover:shadow-md active:scale-[0.98]"
+        >
+          <CreditCard className="h-4 w-4" />
+          Tip with Card
+        </a>
+        <p className="mt-2 text-center text-xs text-gray-400">
+          Choose your amount on the next page
+        </p>
       </div>
     </div>
   );

@@ -34,7 +34,6 @@ const methods: PaymentCard[] = [
     cta: 'Tip with Card',
     color: 'border-indigo-100',
     iconBg: 'bg-indigo-50 text-indigo-600',
-    comingSoon: true,
   },
   {
     id: 'paypal',
@@ -96,6 +95,7 @@ const methods: PaymentCard[] = [
 ];
 
 const externalLinks: Record<string, string> = {
+  stripe: 'https://buy.stripe.com/4gMcN58ea8ambK72g6dfG04',
   paypal: 'https://paypal.me/mrjkilcoyne',
   github: 'https://github.com/sponsors/mrjkilcoyne-lgtm',
 };

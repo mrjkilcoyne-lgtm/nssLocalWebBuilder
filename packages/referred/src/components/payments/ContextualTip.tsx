@@ -21,9 +21,14 @@ export default function ContextualTip({ className }: ContextualTipProps) {
           <span className="font-medium text-primary-700">drop us a thank you</span>
         </p>
       </div>
-      <span className="rounded-lg border border-dashed border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-400">
-        Tip jar coming soon
-      </span>
+      <a
+        href="https://buy.stripe.com/4gMcN58ea8ambK72g6dfG04"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-lg bg-primary-500 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-primary-600"
+      >
+        Tip with Card
+      </a>
     </div>
   );
 }
