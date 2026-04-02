@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, Shield, ExternalLink, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -76,24 +77,27 @@ function formatPrice(low: number | null, high: number | null, currency: string):
 }
 
 function CompanyLogo({ name, logoUrl, websiteUrl }: { name: string; logoUrl: string | null; websiteUrl?: string | null }) {
+  const [imgFailed, setImgFailed] = useState(false);
+
   // Try Clearbit logo API if no logo_url set (free, no auth)
-  const domain = websiteUrl
-    ? new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`).hostname.replace('www.', '')
-    : null;
-  const clearbitUrl = domain ? `https://logo.clearbit.com/${domain}` : null;
+  let clearbitUrl: string | null = null;
+  try {
+    if (websiteUrl) {
+      const domain = new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`).hostname.replace('www.', '');
+      clearbitUrl = `https://logo.clearbit.com/${domain}`;
+    }
+  } catch {
+    // invalid URL, skip
+  }
   const src = logoUrl || clearbitUrl;
 
-  if (src) {
+  if (src && !imgFailed) {
     return (
       <img
         src={src}
         alt={`${name} logo`}
         className="h-full w-full object-contain p-4"
-        onError={(e) => {
-          // Fallback to initials if image fails
-          (e.target as HTMLImageElement).style.display = 'none';
-          (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-        }}
+        onError={() => setImgFailed(true)}
       />
     );
   }
