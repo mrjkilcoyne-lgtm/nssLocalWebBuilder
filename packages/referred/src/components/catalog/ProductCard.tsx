@@ -98,6 +98,10 @@ function CompanyLogo({ name, logoUrl, websiteUrl }: { name: string; logoUrl: str
         alt={`${name} logo`}
         className="h-full w-full object-contain p-4"
         onError={() => setImgFailed(true)}
+        onLoad={(e) => {
+          const img = e.target as HTMLImageElement;
+          if (img.naturalWidth === 0) setImgFailed(true);
+        }}
       />
     );
   }
