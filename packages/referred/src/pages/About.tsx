@@ -4,12 +4,6 @@ import {
   Search,
   MessageSquare,
   Tag,
-  CreditCard,
-  Wallet,
-  Bitcoin,
-  Heart,
-  Github,
-  Building2,
   ChevronDown,
   ChevronUp,
   ArrowRight,
@@ -18,6 +12,7 @@ import {
   Shield,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import PaymentMethods from '@/components/payments/PaymentMethods';
 
 const steps = [
   {
@@ -40,15 +35,6 @@ const steps = [
   },
 ];
 
-const paymentMethods = [
-  { icon: CreditCard, name: 'Stripe', desc: 'Card payments worldwide', color: 'bg-indigo-50 text-indigo-600 border-indigo-100' },
-  { icon: Building2, name: 'GoCardless', desc: 'Direct bank debit (EU/UK)', color: 'bg-teal-50 text-teal-600 border-teal-100' },
-  { icon: Bitcoin, name: 'Bitcoin', desc: 'BTC and Lightning Network', color: 'bg-orange-50 text-orange-600 border-orange-100' },
-  { icon: Wallet, name: 'PayPal', desc: 'PayPal and Venmo', color: 'bg-blue-50 text-blue-600 border-blue-100' },
-  { icon: Heart, name: 'Buy Me a Coffee', desc: 'Quick one-time tips', color: 'bg-yellow-50 text-yellow-600 border-yellow-100' },
-  { icon: Github, name: 'GitHub Sponsors', desc: 'Recurring sponsorship', color: 'bg-gray-50 text-gray-600 border-gray-200' },
-  { icon: Building2, name: 'Bank Transfer', desc: 'SWIFT / SEPA / ACH', color: 'bg-emerald-50 text-emerald-600 border-emerald-100' },
-];
 
 const faqs = [
   {
@@ -161,19 +147,7 @@ export default function About() {
               REFERRED is free. Tips and sponsorships keep the lights on and the deals flowing.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {paymentMethods.map((pm) => (
-              <div key={pm.name} className={cn('card flex items-start gap-4 p-5 border', pm.color.split(' ')[2])}>
-                <div className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl', pm.color.split(' ').slice(0, 2).join(' '))}>
-                  <pm.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary-900">{pm.name}</h3>
-                  <p className="mt-0.5 text-xs text-gray-400">{pm.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <PaymentMethods className="mt-10" />
         </div>
       </section>
 

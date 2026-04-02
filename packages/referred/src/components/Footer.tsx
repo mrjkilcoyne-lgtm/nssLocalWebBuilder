@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { CreditCard, Wallet, Bitcoin, Heart } from 'lucide-react';
 
+const BASENAME = '/nssLocalWebBuilder';
+
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/catalog', label: 'Catalog' },
@@ -22,15 +24,23 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-3">
-            <Link to="/" className="text-xl font-bold text-primary-900">
+            <a
+              href={`${BASENAME}/`}
+              className="text-xl font-bold text-primary-900 hover:text-primary-700 transition-colors"
+            >
               REFERRED
-            </Link>
+            </a>
             <p className="text-sm text-gray-500 leading-relaxed">
               The best deals in AI. Curated recommendations you can trust.
             </p>
-            <p className="text-xs font-mono text-primary-500 tracking-wider">
-              A BACK-ONLINE project
-            </p>
+            <a
+              href="https://mrjkilcoyne.github.io/nssLocalWebBuilder/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xs text-primary-400 hover:text-primary-500 transition-colors"
+            >
+              mrjkilcoyne.github.io/nssLocalWebBuilder
+            </a>
           </div>
 
           {/* Navigation */}
@@ -78,13 +88,36 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-2 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
-          <p className="text-xs text-gray-400">
-            &copy; {new Date().getFullYear()} REFERRED by BACK-ONLINE. All rights reserved.
-          </p>
-          <p className="text-xs font-mono text-primary-400 tracking-widest">
-            BACK-ONLINE told me to tell you they referred me
-          </p>
+        <div className="mt-10 flex flex-col items-center gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
+          <div className="flex flex-col items-center gap-1 sm:items-start">
+            <p className="text-xs text-gray-400">
+              &copy; {new Date().getFullYear()} REFERRED by BACK-ONLINE. All rights reserved.
+            </p>
+            <p className="text-[10px] text-gray-300">
+              Powered by{' '}
+              <a
+                href="https://mrjkilcoyne.github.io/nssLocalWebBuilder/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                BACK-ONLINE
+              </a>
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <p className="text-xs font-mono text-primary-400 tracking-widest">
+              BACK-ONLINE told me to tell you they referred me
+            </p>
+            <Link
+              id="footer-hidden-gem"
+              to="/catalog?easter=1"
+              className="text-[8px] text-gray-100 hover:text-primary-400 transition-colors leading-none"
+              aria-label="Easter egg deal"
+            >
+              *
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

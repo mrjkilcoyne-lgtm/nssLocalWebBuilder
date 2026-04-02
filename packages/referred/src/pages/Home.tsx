@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Cpu,
@@ -11,7 +12,11 @@ import {
   ArrowRight,
   Heart,
   TrendingUp,
+  Loader2,
 } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
+import type { Product } from '@/types/catalog';
+import ProductCard from '@/components/catalog/ProductCard';
 
 const categories = [
   { icon: Cpu, label: 'Compute', desc: 'GPUs, cloud, TPUs', color: 'bg-blue-50 text-blue-600' },
@@ -30,7 +35,34 @@ const stackBattles = [
   { left: 'Midjourney', right: 'DALL-E 3', leftPct: 72 },
 ];
 
+function useFeaturedProducts() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetch() {
+      const { data } = await supabase
+        .from('products')
+        .select('*, company:companies(*), affiliate_links!affiliate_links_product_id_fkey(*)')
+        .limit(30);
+
+      // Filter to only products that have at least one active affiliate link
+      const withDeals = (data ?? [])
+        .filter((p: Product) => p.affiliate_links?.some((l) => l.status === 'active'))
+        .slice(0, 6);
+
+      setProducts(withDeals);
+      setLoading(false);
+    }
+    fetch();
+  }, []);
+
+  return { products, loading };
+}
+
 export default function Home() {
+  const { products: featured, loading: featuredLoading } = useFeaturedProducts();
+
   return (
     <div>
       {/* Hero */}
@@ -91,6 +123,37 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Featured Products */}
+      {featured.length > 0 && (
+        <section className="bg-gray-50 border-y border-gray-100">
+          <div className="container-page py-16 sm:py-20">
+            <div className="text-center">
+              <h2 className="section-heading">Featured Deals</h2>
+              <p className="section-subheading mx-auto max-w-2xl">
+                Hand-picked products with verified affiliate deals.
+              </p>
+            </div>
+            {featuredLoading ? (
+              <div className="mt-10 flex justify-center">
+                <Loader2 className="h-6 w-6 animate-spin text-primary-400" />
+              </div>
+            ) : (
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {featured.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            )}
+            <div className="mt-8 text-center">
+              <Link to="/catalog" className="btn-secondary">
+                View All Deals
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Stack Battles */}
       <section className="bg-gray-50 border-y border-gray-100">
