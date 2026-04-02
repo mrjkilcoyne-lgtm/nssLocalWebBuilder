@@ -16,7 +16,7 @@ const DEFAULT_FILTERS: CatalogFilters = {
   priceMax: null,
   modalities: [],
   beginnerFriendly: null,
-  sortBy: 'rating',
+  sortBy: 'name',
 };
 
 export default function Catalog() {
@@ -31,7 +31,8 @@ export default function Catalog() {
   // Keep region in sync with store
   const effectiveFilters: CatalogFilters = { ...filters, region };
 
-  const { products, loading, error, totalCount, page, hasMore, setPage } = useCatalog(effectiveFilters);
+  const { products, loading, error, totalCount, page, pageSize, hasMore, setPage } = useCatalog(effectiveFilters);
+  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
 
   function handleFilterChange(partial: Partial<CatalogFilters>) {
     setFilters((prev) => ({ ...prev, ...partial }));
@@ -70,7 +71,8 @@ export default function Catalog() {
             onChange={(e) => handleFilterChange({ sortBy: e.target.value as CatalogFilters['sortBy'] })}
             className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
           >
-            <option value="rating">Top Rated</option>
+            <option value="name">Name: A to Z</option>
+            <option value="popular">Most Popular</option>
             <option value="price_low">Price: Low to High</option>
             <option value="price_high">Price: High to Low</option>
             <option value="newest">Newest</option>
@@ -104,10 +106,13 @@ export default function Catalog() {
       </div>
 
       {/* Pagination */}
-      {totalCount > 0 && (
-        <div className="mt-8 flex items-center justify-center gap-2">
+      {totalCount > 0 && totalPages > 1 && (
+        <div className="mt-8 flex items-center justify-center gap-3">
           <button
-            onClick={() => setPage(page - 1)}
+            onClick={() => {
+              setPage(page - 1);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             disabled={page <= 1}
             className={cn(
               'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
@@ -118,9 +123,15 @@ export default function Catalog() {
           >
             Previous
           </button>
-          <span className="text-sm text-gray-500">Page {page}</span>
+          <span className="text-sm text-gray-500">
+            Page <span className="font-medium text-gray-700">{page}</span> of{' '}
+            <span className="font-medium text-gray-700">{totalPages}</span>
+          </span>
           <button
-            onClick={() => setPage(page + 1)}
+            onClick={() => {
+              setPage(page + 1);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             disabled={!hasMore}
             className={cn(
               'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',

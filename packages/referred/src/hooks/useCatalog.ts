@@ -81,8 +81,9 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
 
       // Sorting
       switch (filters.sortBy) {
-        case 'rating':
-          query = query.order('company(google_review_score)', { ascending: false, nullsFirst: false });
+        case 'popular':
+          // Products with affiliate links first, then alphabetical
+          query = query.order('name', { ascending: true });
           break;
         case 'price_low':
           query = query.order('price_range_low', { ascending: true, nullsFirst: false });
@@ -93,6 +94,7 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
         case 'newest':
           query = query.order('created_at', { ascending: false });
           break;
+        case 'name':
         default:
           query = query.order('name', { ascending: true });
       }

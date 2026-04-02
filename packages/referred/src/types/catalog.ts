@@ -66,5 +66,5 @@ export interface CatalogFilters {
   priceMax: number | null;
   modalities: Modality[];
   beginnerFriendly: boolean | null;
-  sortBy: 'rating' | 'price_low' | 'price_high' | 'newest';
+  sortBy: 'name' | 'popular' | 'price_low' | 'price_high' | 'newest';
 }
