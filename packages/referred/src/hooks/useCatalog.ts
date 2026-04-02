@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import type { Product, CatalogFilters } from '@/types/catalog';
 
@@ -13,7 +13,7 @@ interface UseCatalogReturn {
   setPage: (page: number) => void;
 }
 
-const DEFAULT_PAGE_SIZE = 12;
+const PAGE_SIZE = 12;
 
 export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
   const [products, setProducts] = useState<Product[]>([]);
@@ -21,122 +21,105 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
   const [error, setError] = useState<string | null>(null);
   const [totalCount, setTotalCount] = useState(0);
   const [page, setPage] = useState(1);
-  const pageSize = DEFAULT_PAGE_SIZE;
-
-  const fetchProducts = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      // If there's a search query, use the RPC function
-      if (filters.search.trim()) {
-        const { data, error: rpcError } = await supabase
-          .rpc('search_catalog', { search_term: filters.search.trim() });
-
-        if (rpcError) throw rpcError;
-
-        // Apply client-side filters to RPC results then paginate
-        let filtered = (data || []) as Product[];
-        filtered = applyClientFilters(filtered, filters);
-        setTotalCount(filtered.length);
-
-        const start = (page - 1) * pageSize;
-        setProducts(filtered.slice(start, start + pageSize));
-        setLoading(false);
-        return;
-      }
-
-      // Build Supabase query
-      let query = supabase
-        .from('products')
-        .select('*, company:companies(*)', { count: 'exact' });
-
-      // Region filter: products whose regions array contains the selected region
-      if (filters.region) {
-        query = query.contains('regions', [filters.region]);
-      }
-
-      // Category filter
-      if (filters.categories.length > 0) {
-        query = query.in('company.category', filters.categories);
-      }
-
-      // Modality filter
-      if (filters.modalities.length > 0) {
-        query = query.in('modality', filters.modalities);
-      }
-
-      // Price range filters
-      if (filters.priceMin !== null) {
-        query = query.gte('price_range_low', filters.priceMin);
-      }
-      if (filters.priceMax !== null) {
-        query = query.lte('price_range_high', filters.priceMax);
-      }
-
-      // Beginner-friendly filter
-      if (filters.beginnerFriendly === true) {
-        query = query.eq('beginner_friendly', true);
-      }
-
-      // Sorting
-      switch (filters.sortBy) {
-        case 'popular':
-          // Products with affiliate links first, then alphabetical
-          query = query.order('name', { ascending: true });
-          break;
-        case 'price_low':
-          query = query.order('price_range_low', { ascending: true, nullsFirst: false });
-          break;
-        case 'price_high':
-          query = query.order('price_range_high', { ascending: false, nullsFirst: false });
-          break;
-        case 'newest':
-          query = query.order('created_at', { ascending: false });
-          break;
-        case 'name':
-        default:
-          query = query.order('name', { ascending: true });
-      }
-
-      // Pagination
-      const from = (page - 1) * pageSize;
-      const to = from + pageSize - 1;
-      query = query.range(from, to);
-
-      const { data, error: queryError, count } = await query;
-
-      if (queryError) throw queryError;
-
-      setProducts((data || []) as Product[]);
-      setTotalCount(count || 0);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : 'Failed to load products';
-      setError(message);
-      setProducts([]);
-      setTotalCount(0);
-    } finally {
-      setLoading(false);
-    }
-  }, [filters, page, pageSize]);
 
   // Reset page when filters change
-  useEffect(() => {
-    setPage(1);
-  }, [
-    filters.search,
-    filters.categories,
-    filters.region,
-    filters.priceMin,
-    filters.priceMax,
-    filters.modalities,
-    filters.beginnerFriendly,
-    filters.sortBy,
-  ]);
+  const filterKey = JSON.stringify({
+    s: filters.search,
+    c: filters.categories,
+    r: filters.region,
+    pMin: filters.priceMin,
+    pMax: filters.priceMax,
+    m: filters.modalities,
+    b: filters.beginnerFriendly,
+    sort: filters.sortBy,
+  });
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    setPage(1);
+  }, [filterKey]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        let query = supabase
+          .from('products')
+          .select('*, company:companies(*)', { count: 'exact' });
+
+        // Region filter
+        if (filters.region) {
+          query = query.contains('regions', [filters.region]);
+        }
+
+        // Modality filter
+        if (filters.modalities.length > 0) {
+          query = query.in('modality', filters.modalities);
+        }
+
+        // Price filters
+        if (filters.priceMin !== null) {
+          query = query.gte('price_range_low', filters.priceMin);
+        }
+        if (filters.priceMax !== null) {
+          query = query.lte('price_range_high', filters.priceMax);
+        }
+
+        // Beginner filter
+        if (filters.beginnerFriendly === true) {
+          query = query.eq('beginner_friendly', true);
+        }
+
+        // Sorting
+        switch (filters.sortBy) {
+          case 'price_low':
+            query = query.order('price_range_low', { ascending: true, nullsFirst: false });
+            break;
+          case 'price_high':
+            query = query.order('price_range_high', { ascending: false, nullsFirst: false });
+            break;
+          case 'newest':
+            query = query.order('created_at', { ascending: false });
+            break;
+          default:
+            query = query.order('name', { ascending: true });
+        }
+
+        // Pagination
+        const from = (page - 1) * PAGE_SIZE;
+        query = query.range(from, from + PAGE_SIZE - 1);
+
+        const { data, error: queryError, count } = await query;
+
+        if (cancelled) return;
+        if (queryError) throw queryError;
+
+        // Client-side category filter (can't filter on joined fields in Supabase)
+        let results = (data || []) as Product[];
+        if (filters.categories.length > 0) {
+          results = results.filter(
+            (p) => p.company && filters.categories.includes(p.company.category)
+          );
+        }
+
+        setProducts(results);
+        setTotalCount(count || 0);
+      } catch (err) {
+        if (cancelled) return;
+        setError(err instanceof Error ? err.message : 'Failed to load products');
+        setProducts([]);
+        setTotalCount(0);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    load();
+    return () => { cancelled = true; };
+  }, [filterKey, page]);
 
   return {
     products,
@@ -144,21 +127,8 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
     error,
     totalCount,
     page,
-    pageSize,
-    hasMore: page * pageSize < totalCount,
+    pageSize: PAGE_SIZE,
+    hasMore: page * PAGE_SIZE < totalCount,
     setPage,
   };
-}
-
-/** Apply filters client-side for RPC search results that return flat rows */
-function applyClientFilters(products: Product[], filters: CatalogFilters): Product[] {
-  return products.filter((p) => {
-    if (filters.region && p.regions && !p.regions.includes(filters.region)) return false;
-    if (filters.modalities.length > 0 && !filters.modalities.includes(p.modality as any)) return false;
-    if (filters.priceMin !== null && (p.price_range_low === null || p.price_range_low < filters.priceMin)) return false;
-    if (filters.priceMax !== null && (p.price_range_high === null || p.price_range_high > filters.priceMax)) return false;
-    if (filters.beginnerFriendly === true && !p.beginner_friendly) return false;
-    if (filters.categories.length > 0 && p.company && !filters.categories.includes(p.company.category)) return false;
-    return true;
-  });
 }
