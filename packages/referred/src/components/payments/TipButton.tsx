@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Heart, X, CreditCard } from 'lucide-react';
+import { Heart, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const quickAmounts = [5, 10, 25] as const;
 const DISMISSED_KEY = 'referred-tip-dismissed';
 
 export default function TipButton() {
@@ -45,13 +44,6 @@ export default function TipButton() {
     } catch {
       // sessionStorage may be unavailable
     }
-  }
-
-  // Stripe Payment Link not yet configured — disable tips for now
-  const stripeConfigured = false;
-
-  function handleTip(_amount: number) {
-    if (!stripeConfigured) return;
   }
 
   if (dismissed) return null;
