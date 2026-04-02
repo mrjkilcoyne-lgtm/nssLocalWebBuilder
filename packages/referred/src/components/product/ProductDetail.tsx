@@ -5,6 +5,7 @@ import type { Product, Company } from '@/types/catalog';
 interface ProductDetailProps {
   product: Product;
   company: Company | null;
+  children?: React.ReactNode;
 }
 
 const CREDIT_COLORS: Record<string, string> = {
@@ -66,26 +67,49 @@ const REGION_LABELS: Record<string, string> = {
   ROW: 'Rest of World',
 };
 
-export default function ProductDetail({ product, company }: ProductDetailProps) {
+function getCompanyLogoSrc(company: Company | null): string | null {
+  if (company?.logo_url) return company.logo_url;
+  // Clearbit fallback (same pattern as ProductCard)
+  const websiteUrl = company?.website_url;
+  if (websiteUrl) {
+    try {
+      const domain = new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`).hostname.replace('www.', '');
+      return `https://logo.clearbit.com/${domain}`;
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
+export default function ProductDetail({ product, company, children }: ProductDetailProps) {
+  const logoSrc = getCompanyLogoSrc(company);
+
   return (
     <div className="grid gap-10 lg:grid-cols-2">
       {/* Left: Image */}
       <div className="space-y-4">
         <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100/50 border border-primary-200/30 flex items-center justify-center">
           <div className="text-center">
-            {company?.logo_url ? (
+            {logoSrc ? (
               <img
-                src={company.logo_url}
-                alt={`${company.name} logo`}
-                className="mx-auto h-20 w-20 object-contain"
+                src={logoSrc}
+                alt={`${company?.name || product.name} logo`}
+                className="mx-auto h-24 w-24 object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                }}
               />
-            ) : (
-              <div className="mx-auto h-20 w-20 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-4">
-                <span className="text-4xl font-bold text-primary-300">
-                  {(company?.name || product.name)[0].toUpperCase()}
-                </span>
-              </div>
-            )}
+            ) : null}
+            <div className={cn(
+              'mx-auto h-24 w-24 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-4',
+              logoSrc ? 'hidden' : ''
+            )}>
+              <span className="text-4xl font-bold text-primary-300">
+                {(company?.name || product.name)[0].toUpperCase()}
+              </span>
+            </div>
             <p className="text-sm text-primary-400 mt-4">{company?.name || 'Product'}</p>
           </div>
         </div>
@@ -198,6 +222,9 @@ export default function ProductDetail({ product, company }: ProductDetailProps) 
             </a>
           )}
         </div>
+
+        {/* Slot for CTA buttons (AffiliateButtons) */}
+        {children}
       </div>
     </div>
   );

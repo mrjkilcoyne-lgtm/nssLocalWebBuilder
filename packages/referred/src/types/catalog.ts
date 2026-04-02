@@ -19,6 +19,7 @@ export interface Product {
   id: string;
   company_id: string;
   company?: Company;
+  affiliate_links?: AffiliateLink[];
   name: string;
   slug: string;
   description: string | null;

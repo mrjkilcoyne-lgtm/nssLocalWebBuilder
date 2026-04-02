@@ -124,8 +124,19 @@ function LogoFallback({ name }: { name: string }) {
   );
 }
 
+function getAffiliateUrl(product: Product): string | null {
+  const links = product.affiliate_links;
+  if (!links || links.length === 0) return null;
+  // Prefer active direct link, then any active link
+  const active = links.filter((l) => l.status === 'active');
+  if (active.length === 0) return null;
+  const direct = active.find((l) => l.link_type === 'direct');
+  return direct?.url || active[0]?.url || null;
+}
+
 export default function ProductCard({ product, viewMode = 'grid' }: ProductCardProps) {
   const company = product.company;
+  const affiliateUrl = getAffiliateUrl(product);
 
   return (
     <div
@@ -155,9 +166,11 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
         </p>
 
         {/* Product name */}
-        <h3 className="mt-0.5 font-semibold text-primary-900 group-hover:text-primary-600 transition-colors">
-          {product.name}
-        </h3>
+        <Link to={`/product/${product.slug}`} className="block">
+          <h3 className="mt-0.5 font-semibold text-primary-900 group-hover:text-primary-600 transition-colors">
+            {product.name}
+          </h3>
+        </Link>
 
         {/* Description */}
         {product.description && (
@@ -195,13 +208,25 @@ export default function ProductCard({ product, viewMode = 'grid' }: ProductCardP
           <span className="text-sm font-semibold text-primary-800">
             {formatPrice(product.price_range_low, product.price_range_high, product.currency)}
           </span>
-          <Link
-            to={`/product/${product.slug}`}
-            className="inline-flex items-center gap-1 rounded-lg bg-primary-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-primary-600 hover:shadow-md active:scale-95"
-          >
-            Get Deal
-            <ExternalLink className="h-3 w-3" />
-          </Link>
+          {affiliateUrl ? (
+            <a
+              href={affiliateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-lg bg-primary-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-primary-600 hover:shadow-md active:scale-95"
+            >
+              Get Deal
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          ) : (
+            <Link
+              to={`/product/${product.slug}`}
+              className="inline-flex items-center gap-1 rounded-lg bg-primary-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-primary-600 hover:shadow-md active:scale-95"
+            >
+              Get Deal
+              <ExternalLink className="h-3 w-3" />
+            </Link>
+          )}
         </div>
       </div>
     </div>

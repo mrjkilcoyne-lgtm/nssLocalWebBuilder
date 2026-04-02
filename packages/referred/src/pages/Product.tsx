@@ -54,13 +54,10 @@ export default function Product() {
         Back to Catalog
       </Link>
 
-      {/* Product Detail */}
-      <ProductDetail product={product} company={company} />
-
-      {/* CTA Buttons */}
-      <div className="lg:ml-auto lg:max-w-[50%] lg:pl-5">
+      {/* Product Detail + CTA Buttons */}
+      <ProductDetail product={product} company={company}>
         <AffiliateButtons affiliateLinks={affiliateLinks} />
-      </div>
+      </ProductDetail>
 
       {/* Price History */}
       <PriceHistoryChart priceHistory={priceHistory} currency={product.currency} />
