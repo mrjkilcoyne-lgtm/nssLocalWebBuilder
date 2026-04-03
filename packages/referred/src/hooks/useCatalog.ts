@@ -73,6 +73,31 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
           query = query.eq('beginner_friendly', true);
         }
 
+        // Search filter
+        if (filters.search.trim()) {
+          const term = `%${filters.search.trim()}%`;
+          query = query.or(`name.ilike.${term},description.ilike.${term}`);
+        }
+
+        // Category filter (categories live on companies table)
+        if (filters.categories.length > 0) {
+          const { data: matchingCompanies } = await supabase
+            .from('companies')
+            .select('id')
+            .in('category', filters.categories);
+
+          if (matchingCompanies && matchingCompanies.length > 0) {
+            const companyIds = matchingCompanies.map(c => c.id);
+            query = query.in('company_id', companyIds);
+          } else {
+            // No matching companies — return empty
+            setProducts([]);
+            setTotalCount(0);
+            setLoading(false);
+            return;
+          }
+        }
+
         // Sorting
         switch (filters.sortBy) {
           case 'price_low':
@@ -97,15 +122,7 @@ export function useCatalog(filters: CatalogFilters): UseCatalogReturn {
         if (cancelled) return;
         if (queryError) throw queryError;
 
-        // Client-side category filter (can't filter on joined fields in Supabase)
-        let results = (data || []) as Product[];
-        if (filters.categories.length > 0) {
-          results = results.filter(
-            (p) => p.company && filters.categories.includes(p.company.category)
-          );
-        }
-
-        setProducts(results);
+        setProducts((data || []) as Product[]);
         setTotalCount(count || 0);
       } catch (err) {
         if (cancelled) return;
