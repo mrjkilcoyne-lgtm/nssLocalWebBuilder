@@ -16,3 +16,4 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://*.supabase.co wss://*.supabase.co; img-src 'self' data: https://www.google.com https://*.gstatic.com; script-src 'self' https://js.stripe.com; frame-src https://buy.stripe.com; style-src 'self' 'unsafe-inline'"
